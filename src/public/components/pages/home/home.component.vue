@@ -207,4 +207,75 @@ export default {
   margin-right: 10px;
 }
 
+.recent-orders-container {
+  background-color: #fbeae5;
+  padding: 20px;
+  margin-left: 20px;
+
+}
+
+.recent-orders-header-container {
+  background-color: #FF7F50;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 0px;
+  max-width: 450px;
+}
+
+.recent-orders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.recent-orders-angle-right {
+  font-size: 32px;
+  color: white;
+}
+
+.recent-orders-list {
+  background-color: #FFCFBB;
+  padding: 40px;
+  border-radius: 8px;
+  max-width:450px;
+  min-height: 700px;
+}
+
+.recent-order-card {
+  margin: 35px 0;
+}
+
+.recent-order-card-content {
+  display: flex;
+  background: #FAEAE7;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-height: 200px;
+  min-width: 280px;
+
+
+}
+
+.recent-order-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.recent-order-info-container {
+  margin-left: 20px;
+  font-size: 16px;
+  text-align: left;
+}
+
+.recent-order-info-container h3 {
+  margin-bottom: 5px;
+  text-align: left;
+  width: 100%;
+}
+
+
 </style>
