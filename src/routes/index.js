@@ -29,6 +29,7 @@ const router = createRouter({
         { path: '/team-activities/members', name:'team-activities-members', component: memberComponent, meta: {title: 'Members'}},
 
 
+
         // Profile
 
 
