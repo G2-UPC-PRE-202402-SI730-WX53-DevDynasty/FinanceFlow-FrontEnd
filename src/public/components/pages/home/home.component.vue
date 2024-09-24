@@ -66,5 +66,102 @@ export default {
 </template>
 
 <style scoped>
+.main-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 80px;
+}
+.recent-restaurants-container {
+  padding: 20px;
+}
+
+.header-container {
+  background-color: #FF7F50;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 0px;
+  max-width: 550px;
+  margin-left: 300px;
+
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+
+.restaurants-list {
+  background-color: #FFCFBB;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 550px;
+  margin-left: 300px;
+  min-height: 600px;
+}
+
+.restaurant-card {
+  margin: 55px 0;
+}
+
+.card-content {
+  display: flex;
+  background: #FAEAE7;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-height: 250px;
+
+}
+
+.image-container img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.info-container {
+  margin-left: 30px;
+  font-size: 16px;
+}
+
+.info-container h3 {
+  margin-bottom: 5px;
+  text-align: center;
+  width: 100%;
+}
+
+.read-more-button {
+  background-color: #FF8C00;
+  color: white;
+  border-radius: 5px;
+  padding: 8px 16px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.read-more-button:hover {
+  background-color: #ff9f33;
+}
+
+.angle-right {
+  font-size: 32px;
+  color: white;
+}
+
+.star {
+  margin-right: 4px;
+}
+
+.rating-label {
+  margin-right: 10px;
+}
 
 </style>
