@@ -38,7 +38,7 @@ export default {
 .role-header {
   background-color: #FF7338;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 8px 8px 0 0;
   max-width: 600px;
   text-align: center;
   max-height: 76.5px;
@@ -50,7 +50,7 @@ export default {
 .role-selection {
   background-color: #FFCFBB;
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: 0 0 8px 8px;
   max-width: 600px;
   margin: auto;
   text-align: center;
