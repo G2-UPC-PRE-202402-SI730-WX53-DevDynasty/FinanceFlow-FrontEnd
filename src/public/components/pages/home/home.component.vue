@@ -61,6 +61,49 @@ export default {
         </div>
       </div>
     </div>
+
+
+    <div class="recent-orders-container">
+      <div class="recent-orders-header-container">
+        <div class="recent-orders-header">
+          <h2>Recent Orders</h2>
+          <span class="pi pi-angle-right recent-orders-angle-right"></span>
+        </div>
+      </div>
+
+      <div class="recent-orders-list">
+        <div class="recent-order-card">
+          <Card>
+            <div class="recent-order-card-content">
+              <div class="recent-order-icon-container">
+                <i class="pi pi-receipt" style="font-size: 48px;"></i>
+              </div>
+              <div class="recent-order-info-container">
+                <h3>Order #0001</h3>
+                <p><strong>Status:</strong> Sent</p>
+                <p><strong>Restaurant:</strong> La Mar</p>
+              </div>
+            </div>
+          </Card>
+        </div>
+
+        <div class="recent-order-card">
+          <Card>
+            <div class="recent-order-card-content">
+              <div class="recent-order-icon-container">
+                <i class="pi pi-receipt" style="font-size: 48px;"></i>
+              </div>
+              <div class="recent-order-info-container">
+                <h3>Order #0002</h3>
+                <p><strong>Status:</strong> Sent</p>
+                <p><strong>Restaurant:</strong> La Mar</p>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 </template>
