@@ -19,7 +19,7 @@ export default {
       <p class="description">*You will be the one making the order for your team!</p>
 
     <button class="role-button">
-      <router-link to="/team-activities/member">Team Member</router-link>
+      <router-link to="/team-activities/members">Team Member</router-link>
     </button>
     <p class="description">*You will join the team of your leader and vote for the restaurant you want!</p>
     </div>

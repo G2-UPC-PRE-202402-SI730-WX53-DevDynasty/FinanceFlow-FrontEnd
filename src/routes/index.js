@@ -6,9 +6,35 @@ import memberComponent from "@/team-activities/components/member.component.vue";
 const router = createRouter({
     history: createWebHistory(),
     routes: [
+        // Home
+
+
+        // Restaurants
+
+
+
+
+
+
+
+        // Orders
+
+
+
+
+
+        //Team Activities
         { path: '/team-activities', name:'team-activities', component: roleSelectionComponent, meta: {title: 'Team Activities'}},
         { path: '/team-activities/leader', name:'team-activities-leader', component: leaderComponent, meta: {title: 'Leader'}},
-        { path: '/team-activities/member', name:'team-activities-member', component: memberComponent, meta: {title: 'Member'}},
+        { path: '/team-activities/members', name:'team-activities-members', component: memberComponent, meta: {title: 'Members'}},
+
+
+        // Profile
+
+
+        // Notifications
+
+
         ]
 });
 
