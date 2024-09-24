@@ -96,7 +96,7 @@ export default {
             <p>Oshi - Order #00000001 - Total: S/. 400.50</p>
             <p>Each member pays: S/. 16.02</p>
             <p>Each member pays for tip: S/. 7.00</p>
-            <Button class="vote-button">Pay</Button>
+            <Button class="pay-button">Pay</Button>
           </div>
         </Card>
 
@@ -191,6 +191,17 @@ export default {
 
 .vote-button :hover {
   background-color: #FAB091;
+}
+
+.pay-button {
+  background-color: #FF7338;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .results {
