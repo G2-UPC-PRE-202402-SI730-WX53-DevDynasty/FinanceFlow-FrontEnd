@@ -1,9 +1,38 @@
-/*import {createRouter} from "vue-router";
+import {createRouter} from "vue-router";
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        { path: '/team', name:'team-activities'
-})
+        // Home
 
-*/
+
+        // Restaurants
+
+
+
+
+
+
+
+        // Orders
+
+
+
+
+
+        //Team Activities
+
+
+
+
+
+
+        // Profile
+
+
+        // Notifications
+
+
+    ]
+});
+
