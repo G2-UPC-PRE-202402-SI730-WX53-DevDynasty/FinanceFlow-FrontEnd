@@ -61,7 +61,7 @@ export default {
     <router-link to="/profile" class="sn-item">
       <font-awesome-icon :icon="faUser()"/> Profile
     </router-link>
-    <router-link to="/" class="sn-item">
+    <router-link to="/notifications" class="sn-item">
       <font-awesome-icon :icon="faBell()"/> Notifications
     </router-link>
 

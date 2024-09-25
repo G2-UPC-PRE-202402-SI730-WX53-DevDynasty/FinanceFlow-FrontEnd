@@ -6,9 +6,9 @@ import roleSelectionComponent from "@/team-activities/components/role-selection.
 import leaderComponent from "@/team-activities/components/leader.component.vue";
 import memberComponent from "@/team-activities/components/member.component.vue";
 import homeComponent from "@/home/components/home.component.vue";
-import orderCardComponent from "@/order/components/order-card.component.vue";
 import profileComponent from "@/profile/components/profile-component.vue";
 import MyOrderComponent from "@/order/pages/my-order.component.vue";
+import NotificationsComponent from "@/public/components/notifications-component.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -67,7 +67,11 @@ const router = createRouter({
             component: profileComponent
         },
         // Notifications
-
+        {
+            path: '/notifications',
+            name: 'notifications',
+            component: NotificationsComponent
+        },
     ]
 });
 router.beforeEach((to, from, next) => {
