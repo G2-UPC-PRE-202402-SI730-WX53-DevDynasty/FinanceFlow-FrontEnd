@@ -13,7 +13,7 @@ export default {
   <div id="app">
     <sidenav-bar></sidenav-bar>
     <div class="screen-content">
-      <!-- <router-view></router-view> -->
+      <router-view></router-view>
     </div>
   </div>
 </template>
