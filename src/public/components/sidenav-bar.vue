@@ -55,7 +55,7 @@ export default {
     <router-link to="/" class="sn-item">
       <font-awesome-icon :icon="faReceipt()"/> My orders
     </router-link>
-    <router-link to="/" class="sn-item">
+    <router-link to="/team-activities" class="sn-item">
       <font-awesome-icon :icon="faPeopleGroup()"/> Team activities
     </router-link>
     <router-link to="/" class="sn-item">
