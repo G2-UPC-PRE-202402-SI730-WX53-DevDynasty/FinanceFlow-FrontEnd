@@ -25,7 +25,7 @@ export default {
 
     <div class="order-list">
       <div class="order-card">
-        <pv-card>
+        <Card>
           <div class="card-content">
             <div class="icon-container">
               <i class="pi pi-file-check" style="font-size: 7.5rem; color: black;"></i>
@@ -35,14 +35,14 @@ export default {
               <p><strong>Restaurant:</strong> <a href="#"> Ochi</a></p>
               <p><strong>Status:</strong>In progress</p>
               <p><strong>Date:</strong> 10/10/2024</p>
-              <pv-button label="see details" class="see-details-button">See Details</pv-button>
+              <button label="see details" class="see-details-button">See Details</button>
             </div>
           </div>
-        </pv-card>
+        </Card>
       </div>
 
       <div class="order-card">
-        <pv-card>
+        <Card>
           <div class="card-content">
             <div class="icon-container">
               <i class="pi pi-file-check" style="font-size: 7.5rem; color: black;"></i>
@@ -52,10 +52,10 @@ export default {
               <p><strong>Restaurant:</strong> <a href="#"> La Mar</a></p>
               <p><strong>Status:</strong>In progress</p>
               <p><strong>Date:</strong> 12/10/2024</p>
-              <pv-button label="see details" class="see-details-button">See Details</pv-button>
+              <button label="see details" class="see-details-button">See Details</button>
             </div>
           </div>
-        </pv-card>
+        </Card>
       </div>
     </div>
   </div>

@@ -24,7 +24,7 @@ export default {
         Team Leader
       </div>
       <div class="card-container">
-        <pv-card>
+        <Card>
           <div class="card-header">
             Your Team
           </div>
@@ -32,9 +32,9 @@ export default {
             <p><strong>Legends:</strong> <span>25 workers</span></p>
             <p>Add coworker: 75T-U12</p>
           </div>
-        </pv-card>
+        </Card>
 
-        <pv-card>
+        <Card>
           <div class="card-header">
             Team preferences
           </div>
@@ -46,9 +46,9 @@ export default {
             <p><strong>Top restaurants of the team</strong></p>
             <p>La Mar, Palm & Vine</p>
           </div>
-        </pv-card>
+        </Card>
 
-        <pv-card>
+        <Card>
           <div class="card-header">
             Voting
           </div>
@@ -67,9 +67,9 @@ export default {
               </div>
             </div>
           </div>
-        </pv-card>
+        </Card>
 
-        <pv-card>
+        <Card>
           <div class="card-header">
             Rate the latest experience
           </div>
@@ -84,9 +84,9 @@ export default {
               <option>Very Poor</option>
             </select>
           </div>
-        </pv-card>
+        </Card>
 
-        <pv-card>
+        <Card>
           <div class="card-header">
             Order Payment
           </div>
@@ -98,7 +98,7 @@ export default {
             <p>Each member pays for tip: S/. 7.00</p>
             <pv-button class="pay-button">Pay</pv-button>
           </div>
-        </pv-card>
+        </Card>
 
       </div>
     </div>

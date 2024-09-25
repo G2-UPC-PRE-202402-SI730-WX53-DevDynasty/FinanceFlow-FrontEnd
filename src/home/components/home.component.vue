@@ -23,7 +23,7 @@ export default {
 
       <div class="restaurants-list">
         <div class="restaurant-card">
-          <pv-card>
+          <Card>
             <div class="card-content">
               <div class="image-container">
                 <img src="https://via.placeholder.com/150" alt="Restaurant Image"/>
@@ -39,11 +39,11 @@ export default {
                 <pv-button label="Read more" class="read-more-button">Read more</pv-button>
               </div>
             </div>
-          </pv-card>
+          </Card>
         </div>
 
         <div class="restaurant-card">
-          <pv-card>
+          <Card>
             <div class="card-content">
               <div class="image-container">
                 <img src="https://via.placeholder.com/150" alt="Restaurant Image"/>
@@ -58,7 +58,7 @@ export default {
                 <pv-button label="Read more" class="read-more-button">Read more</pv-button>
               </div>
             </div>
-          </pv-card>
+          </Card>
         </div>
       </div>
     </div>
@@ -74,7 +74,7 @@ export default {
 
       <div class="recent-orders-list">
         <div class="recent-order-card">
-          <pv-card>
+          <Card>
             <div class="recent-order-card-content">
               <div class="recent-order-icon-container">
                 <i class="pi pi-receipt" style="font-size: 48px;"></i>
@@ -85,11 +85,11 @@ export default {
                 <p><strong>Restaurant:</strong> La Mar</p>
               </div>
             </div>
-          </pv-card>
+          </Card>
         </div>
 
         <div class="recent-order-card">
-          <pv-card>
+          <Card>
             <div class="recent-order-card-content">
               <div class="recent-order-icon-container">
                 <i class="pi pi-receipt" style="font-size: 48px;"></i>
@@ -100,7 +100,7 @@ export default {
                 <p><strong>Restaurant:</strong> La Mar</p>
               </div>
             </div>
-          </pv-card>
+          </Card>
         </div>
       </div>
     </div>
