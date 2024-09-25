@@ -49,7 +49,7 @@ export default {
     <router-link to="/" class="sn-item">
       <font-awesome-icon :icon="faHome()" /> Home
     </router-link>
-    <router-link to="/" class="sn-item">
+    <router-link to="/restaurants" class="sn-item">
       <font-awesome-icon :icon="faUtensils()" /> Restaurants
     </router-link>
     <router-link to="/" class="sn-item">

@@ -24,7 +24,7 @@ export default {
         Team Leader
       </div>
       <div class="card-container">
-        <Card>
+        <pv-card>
           <div class="card-header">
             Your Team
           </div>
@@ -32,9 +32,9 @@ export default {
             <p><strong>Legends:</strong> <span>25 workers</span></p>
             <p>Add coworker: 75T-U12</p>
           </div>
-        </Card>
+        </pv-card>
 
-        <Card>
+        <pv-card>
           <div class="card-header">
             Team preferences
           </div>
@@ -46,9 +46,9 @@ export default {
             <p><strong>Top restaurants of the team</strong></p>
             <p>La Mar, Palm & Vine</p>
           </div>
-        </Card>
+        </pv-card>
 
-        <Card>
+        <pv-card>
           <div class="card-header">
             Voting
           </div>
@@ -57,19 +57,19 @@ export default {
             <div class="vote-options">
               <div class="vote-item">
                 <p><strong>Ochi</strong></p>
-                <Button class="vote-button"><font-awesome-icon :icon="faCheck()"></font-awesome-icon></Button>
+                <pv-button class="vote-button"><font-awesome-icon :icon="faCheck()"></font-awesome-icon></pv-button>
                 <p class="results">24</p>
               </div>
               <div class="vote-item">
                 <p><strong>Palm & Vine</strong></p>
-                <Button class="vote-button"><font-awesome-icon :icon="faCheck()"></font-awesome-icon></Button>
+                <pv-button class="vote-button"><font-awesome-icon :icon="faCheck()"></font-awesome-icon></pv-button>
                 <p class="results">1</p>
               </div>
             </div>
           </div>
-        </Card>
+        </pv-card>
 
-        <Card>
+        <pv-card>
           <div class="card-header">
             Rate the latest experience
           </div>
@@ -84,9 +84,9 @@ export default {
               <option>Very Poor</option>
             </select>
           </div>
-        </Card>
+        </pv-card>
 
-        <Card>
+        <pv-card>
           <div class="card-header">
             Order Payment
           </div>
@@ -96,9 +96,9 @@ export default {
             <p>Oshi - Order #00000001 - Total: S/. 400.50</p>
             <p>Each member pays: S/. 16.02</p>
             <p>Each member pays for tip: S/. 7.00</p>
-            <Button class="pay-button">Pay</Button>
+            <pv-button class="pay-button">Pay</pv-button>
           </div>
-        </Card>
+        </pv-card>
 
       </div>
     </div>

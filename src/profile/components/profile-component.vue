@@ -36,11 +36,11 @@ export default {
           <input id="email" placeholder="Enter your email">
           <label for="cpassword">Change Password</label>
           <input id="cpassword" placeholder="Enter your new password">
-          <button>Save</button>
+          <pv-button>Save</pv-button>
         </div>
         <div class="suscription">
           <div class="suscription-card">
-            <Card>
+            <pv-card>
               <div class="card-content">
                 <div class="info-container">
                   <h2>La Mar</h2>
@@ -48,7 +48,7 @@ export default {
                   <p><strong>Schedule:</strong> 12:00 - 18:00</p>
                 </div>
               </div>
-            </Card>
+            </pv-card>
           </div>
       </div>
       </div>

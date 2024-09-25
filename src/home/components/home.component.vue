@@ -2,6 +2,7 @@
 import 'primeicons/primeicons.css';
 
 export default {
+  // eslint-disable-next-line vue/multi-word-component-names
   name: "home",
   data() {
     return {};
@@ -22,7 +23,7 @@ export default {
 
       <div class="restaurants-list">
         <div class="restaurant-card">
-          <Card>
+          <pv-card>
             <div class="card-content">
               <div class="image-container">
                 <img src="https://via.placeholder.com/150" alt="Restaurant Image"/>
@@ -35,14 +36,14 @@ export default {
                   <span v-for="n in 5" :key="n" class="pi pi-star-fill star"></span>
 
                 </p>
-                <button label="Read more" class="read-more-button">Read more</button>
+                <pv-button label="Read more" class="read-more-button">Read more</pv-button>
               </div>
             </div>
-          </Card>
+          </pv-card>
         </div>
 
         <div class="restaurant-card">
-          <Card>
+          <pv-card>
             <div class="card-content">
               <div class="image-container">
                 <img src="https://via.placeholder.com/150" alt="Restaurant Image"/>
@@ -54,10 +55,10 @@ export default {
                 <p><strong class="rating-label">Rating:</strong>
                   <span v-for="n in 5" :key="n" class="pi pi-star-fill star"></span>
                 </p>
-                <button label="Read more" class="read-more-button">Read more</button>
+                <pv-button label="Read more" class="read-more-button">Read more</pv-button>
               </div>
             </div>
-          </Card>
+          </pv-card>
         </div>
       </div>
     </div>
@@ -73,7 +74,7 @@ export default {
 
       <div class="recent-orders-list">
         <div class="recent-order-card">
-          <Card>
+          <pv-card>
             <div class="recent-order-card-content">
               <div class="recent-order-icon-container">
                 <i class="pi pi-receipt" style="font-size: 48px;"></i>
@@ -84,11 +85,11 @@ export default {
                 <p><strong>Restaurant:</strong> La Mar</p>
               </div>
             </div>
-          </Card>
+          </pv-card>
         </div>
 
         <div class="recent-order-card">
-          <Card>
+          <pv-card>
             <div class="recent-order-card-content">
               <div class="recent-order-icon-container">
                 <i class="pi pi-receipt" style="font-size: 48px;"></i>
@@ -99,7 +100,7 @@ export default {
                 <p><strong>Restaurant:</strong> La Mar</p>
               </div>
             </div>
-          </Card>
+          </pv-card>
         </div>
       </div>
     </div>

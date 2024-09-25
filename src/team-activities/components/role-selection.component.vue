@@ -13,14 +13,14 @@ export default {
   </div>
   <div class="role-selection">
     <div class="role-buttons">
-      <button class="role-button">
+      <pv-button class="role-button">
         <router-link to="/team-activities/leader">Team Leader</router-link>
-      </button>
+      </pv-button>
       <p class="description">*You will be the one making the order for your team!</p>
 
-    <button class="role-button">
+    <pv-button class="role-button">
       <router-link to="/team-activities/members">Team Member</router-link>
-    </button>
+    </pv-button>
     <p class="description">*You will join the team of your leader and vote for the restaurant you want!</p>
     </div>
   </div>
