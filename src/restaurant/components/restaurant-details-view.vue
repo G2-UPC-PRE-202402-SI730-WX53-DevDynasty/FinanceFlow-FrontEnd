@@ -36,7 +36,7 @@ export default {
         <template #content>
           <div class="card-content">
             <div class="card-image">
-              <img src="@/assets/restaurant-1.jpg" alt="Restaurant image" class="restaurant-image" />
+              <img src="../../assets/restaurant-1.jpg" alt="Restaurant image" class="restaurant-image" />
             </div>
             <div class="card-info">
               <h2>{{ restaurant.name }}</h2>
