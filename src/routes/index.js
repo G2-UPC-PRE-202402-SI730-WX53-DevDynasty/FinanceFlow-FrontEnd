@@ -17,29 +17,34 @@ const router = createRouter({
         {
             path: '/',
             name: 'home',
-            component: homeComponent
+            component: homeComponent,
+            meta: {title: 'Home'}
         },
         // Restaurants
         {
             path: '/restaurants',
             name: 'restaurants',
             component: RestaurantView,
+            meta: {title: 'Restaurants'}
         },
         {
             path: '/restaurants/:name',
             name: 'RestaurantDetailsView',
-            component: RestaurantDetailsView
+            component: RestaurantDetailsView,
+            meta: {title: 'Restaurant Details'}
         },
         {
             path: '/restaurant/:id/menu',
             name: 'restaurant-menu',
-            component: RestaurantMenuView
+            component: RestaurantMenuView,
+            meta: {title: 'Restaurant Menu'}
         },
         // Orders
         {
             path: '/orders',
             name: 'orders',
-            component: MyOrderComponent
+            component: MyOrderComponent,
+            meta: {title: 'Orders'}
         },
         // Team Activities
         {
@@ -64,13 +69,15 @@ const router = createRouter({
         {
             path: '/profile',
             name: 'profile',
-            component: profileComponent
+            component: profileComponent,
+            meta: {title: 'Profile'}
         },
         // Notifications
         {
             path: '/notifications',
             name: 'notifications',
-            component: NotificationsComponent
+            component: NotificationsComponent,
+            meta: {title: 'Notifications'}
         },
     ]
 });
