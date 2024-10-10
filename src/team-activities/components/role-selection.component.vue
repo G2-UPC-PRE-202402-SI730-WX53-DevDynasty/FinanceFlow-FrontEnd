@@ -1,7 +1,17 @@
 <script>
 
 export default {
-  name: 'role-selection'
+  name: 'role-selection',
+
+  methods: {
+    goToLeader() {
+      this.$router.push('/team-activities/leader');
+    },
+
+    goToMember() {
+      this.$router.push('/team-activities/members');
+    }
+  }
 }
 
 </script>
@@ -12,14 +22,15 @@ export default {
   What is your role?
   </div>
   <div class="role-selection">
+    <p>Remember that each member (including the leader) have to add a method of payment since it will be automatically done after confirming an order.</p>
     <div class="role-buttons">
-      <button class="role-button">
-        <router-link to="/team-activities/leader">Team Leader</router-link>
+      <button @click="goToLeader" class="role-button">
+        Team Leader
       </button>
       <p class="description">*You will be the one making the order for your team!</p>
 
-    <button class="role-button">
-      <router-link to="/team-activities/members">Team Member</router-link>
+    <button @click="goToMember" class="role-button">
+      Team Member
     </button>
     <p class="description">*You will join the team of your leader and vote for the restaurant you want!</p>
     </div>
