@@ -17,12 +17,11 @@ export default {
 </script>
 
 <template>
-  <div class="leader-container">
-
-    <div class="leader-content">
-      <div class="leader-header">
-        Team Leader
-      </div>
+  <div class="member-container">
+    <div class="member-header">
+      Team Member
+    </div>
+    <div class="member-content">
       <div class="card-container">
         <Card>
           <div class="card-header">
@@ -130,20 +129,20 @@ export default {
 
 <style scoped>
 
-.leader-container {
+.member-container {
   padding: 20px;
   margin-left: 80px;
-  min-height: 0;
-  flex: 1;
-  display: flex;
   height: 100%;
   width: 100%;
   justify-content: center;
   align-items: center;
+  min-height: 0;
+  flex: 1;
+  display: grid;
 }
 
 
-.leader-header {
+.member-header {
   background-color: #FF7338;
   padding: 20px;
   border-radius: 8px 8px 0 0;
@@ -155,7 +154,7 @@ export default {
   font-weight: bold;
 }
 
-.leader-content {
+.member-content {
   background-color: #FFCFBB;
   padding: 20px;
   border-radius: 0 0 8px 8px;
