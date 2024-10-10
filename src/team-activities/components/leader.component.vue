@@ -18,11 +18,11 @@ export default {
 
 <template>
   <div class="leader-container">
-
+    <div class="leader-header">
+      Team Leader
+    </div>
     <div class="leader-content">
-      <div class="leader-header">
-        Team Leader
-      </div>
+
       <div class="card-container">
         <Card>
           <div class="card-header">
@@ -111,13 +111,14 @@ export default {
 .leader-container {
   padding: 20px;
   margin-left: 80px;
-  min-height: 0;
-  flex: 1;
-  display: flex;
   height: 100%;
   width: 100%;
   justify-content: center;
   align-items: center;
+  min-height: 0;
+  flex: 1;
+  display: grid;
+
 }
 
 
