@@ -9,10 +9,18 @@ import homeComponent from "@/home/components/home.component.vue";
 import profileComponent from "@/profile/components/profile-component.vue";
 import MyOrderComponent from "@/order/pages/my-order.component.vue";
 import NotificationsComponent from "@/public/components/notifications-component.vue";
+import loginComponent from "@/iam/pages/login.component.vue";
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
+        // Log In
+        {
+            path: '/login',
+            name: 'login',
+            component: loginComponent,
+            meta: {title: 'LogIn'}
+        },
         // Home
         {
             path: '/',
@@ -79,6 +87,7 @@ const router = createRouter({
             component: NotificationsComponent,
             meta: {title: 'Notifications'}
         },
+
     ]
 });
 router.beforeEach((to, from, next) => {
