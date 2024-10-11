@@ -1,6 +1,11 @@
 <script>
 export default {
   name: "RecoverPasswordComponent",
+  methods: {
+    goToSuccessfulRecoverPassword() {
+      this.$router.push({ name: 'success-recover' });
+    }
+  }
 }
 </script>
 
@@ -25,7 +30,7 @@ export default {
           <label for="email">Email</label>
           <input type="email" id="email" placeholder="Enter your email" required />
         </div>
-        <button type="submit" class="send-button">Send</button>
+        <button  @click="goToSuccessfulRecoverPassword" type="submit" class="send-button">Send</button>
       </form>
     </div>
     <img src="../../assets/logo-gastrogo.png" alt="GastroGo Logo" class="Logo" />

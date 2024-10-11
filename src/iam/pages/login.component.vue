@@ -4,7 +4,10 @@ export default {
   methods: {
     goToRecoverPassword() {
       this.$router.push({ name: 'recover-password' });
-    }
+    },
+    goToSignUp() {
+      this.$router.push({ name: 'sign-up' });
+    },
   }
 }
 </script>
@@ -37,7 +40,7 @@ export default {
         </div>
         <a @click="goToRecoverPassword" class="forgot-password">Forgot your password?</a>
         <button type="submit" class="login-button">Log in</button>
-        <p>Don’t have an account? <a >Create it now.</a></p>
+        <p>Don’t have an account? <a @click="goToSignUp">Create it now.</a></p>
       </form>
     </div>
     <img src="../../assets/logo-gastrogo.png" alt="GastroGo Logo" class="Logo" />
@@ -156,10 +159,8 @@ a {
   color: black;
   text-decoration: none;
   border-bottom: 1px solid black;
-}
+  cursor: pointer;
 
-a:hover {
-  text-decoration: underline;
 }
 
 .login-section p {

@@ -1,6 +1,11 @@
 <script>
 export default {
   name: "SuccessfulRecoverPasswordComponent",
+  methods: {
+    goToLogIn() {
+      this.$router.push({ name: 'login' });
+    }
+  }
 }
 </script>
 
@@ -24,7 +29,7 @@ export default {
         <div class="form-group">
           <label for="email">An email was sent to the email address provided</label>
         </div>
-        <button type="submit" class="go-to-login-button">Go back to Log In</button>
+        <button @click="goToLogIn" type="submit" class="go-to-login-button">Go back to Log In</button>
       </form>
     </div>
     <img src="../../assets/logo-gastrogo.png" alt="GastroGo Logo" class="Logo" />
