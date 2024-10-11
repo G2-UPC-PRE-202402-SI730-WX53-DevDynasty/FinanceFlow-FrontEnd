@@ -1,6 +1,14 @@
 <script>
 export default {
   name: "SingUpComponent",
+  methods: {
+    goToSingUpWorkers() {
+      this.$router.push({ name: 'sing-up-workers' });
+    },
+    goToSingUpRestaurants() {
+      this.$router.push({ name: 'sing-up-restaurants' });
+    },
+  }
 }
 
 </script>
@@ -23,9 +31,9 @@ export default {
     <div class="section-singup">
       <h1>What are you interested in?</h1>
       <div class="option-group">
-        <button class="option-button">I am an employee!</button>
+        <button @click="goToSingUpWorkers" class="option-button">I am an employee!</button>
         <p>Order a whole menu for each of your coworkers at the palm of your hand.</p>
-        <button class="option-button">I am the owner of a restaurant!</button>
+        <button @click="goToSingUpRestaurants" class="option-button">I am the owner of a restaurant!</button>
         <p>Advertise your restaurant, increase the number of clients monthly and <br> have a good organization of each order.</p>
       </div>
     </div>
