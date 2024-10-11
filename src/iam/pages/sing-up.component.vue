@@ -3,10 +3,10 @@ export default {
   name: "SingUpComponent",
   methods: {
     goToSingUpWorkers() {
-      this.$router.push({ name: 'sing-up-workers' });
+      this.$router.push({ name: 'sign-up-workers' });
     },
     goToSingUpRestaurants() {
-      this.$router.push({ name: 'sing-up-restaurants' });
+      this.$router.push({ name: 'sign-up-restaurants' });
     },
   }
 }

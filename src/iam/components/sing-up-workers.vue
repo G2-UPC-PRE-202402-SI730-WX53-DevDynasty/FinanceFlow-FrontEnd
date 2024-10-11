@@ -84,7 +84,7 @@ export default {
   object-fit: cover;
   position: absolute;
   top: 0;
-  left: -329px;
+  left: -345px;
 }
 
 .background-text {
@@ -128,7 +128,7 @@ export default {
 .input-row {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 50px;
 }
 
 input {
@@ -136,12 +136,12 @@ input {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 100%;
+  width: 115%;
   margin-bottom: 5px;
 }
 
 .input-small{
-  min-width: 85px;
+  min-width: 190px;
 }
 
 label {
