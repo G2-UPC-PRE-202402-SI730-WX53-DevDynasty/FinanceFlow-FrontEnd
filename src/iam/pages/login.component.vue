@@ -1,6 +1,11 @@
 <script>
 export default {
   name: "LogInComponent",
+  methods: {
+    goToRecoverPassword() {
+      this.$router.push({ name: 'recover-password' });
+    }
+  }
 }
 </script>
 
@@ -30,9 +35,9 @@ export default {
           <label for="password">Password</label>
           <input type="password" id="password" placeholder="Enter your password" required />
         </div>
-        <a href="#" class="forgot-password">Forgot your password?</a>
+        <a @click="goToRecoverPassword" class="forgot-password">Forgot your password?</a>
         <button type="submit" class="login-button">Log in</button>
-        <p>Don’t have an account? <a href="#">Create it now.</a></p>
+        <p>Don’t have an account? <a >Create it now.</a></p>
       </form>
     </div>
     <img src="../../assets/logo-gastrogo.png" alt="GastroGo Logo" class="Logo" />
