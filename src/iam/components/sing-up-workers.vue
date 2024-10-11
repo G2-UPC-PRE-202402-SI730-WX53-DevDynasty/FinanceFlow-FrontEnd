@@ -64,5 +64,116 @@ export default {
 </template>
 
 <style scoped>
+.login-page {
+  display: flex;
+  height: 100vh;
+}
 
+.background-section {
+  width: 720px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.restaurant-image {
+  width: 110%;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: -329px;
+}
+
+.background-text {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  max-width: 300px;
+  left: -250px;
+  text-align: left;
+  word-break: keep-all;
+  max-width: 450px;
+}
+
+.background-text h2 {
+  font-size: 36px;
+  line-height: 1.2;
+  margin: 0;
+  white-space: normal;
+}
+
+.register-section {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.register-section h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.input-small{
+  min-width: 85px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+button.submit-button {
+  background-color: #ff6f3f;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 20px;
+  width: 460px;
+  max-width: 700px;
+}
+
+button.submit-button:hover {
+  background-color: #e65b30;
+}
+
+.Logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 150px;
+}
 </style>
