@@ -34,5 +34,99 @@ export default {
 </template>
 
 <style scoped>
+.login-page {
+  display: flex;
+  height: 100vh;
+}
 
+.background-section {
+  width: 720px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.restaurant-image {
+  width: 110%;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: -345px;
+}
+
+.background-text {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  max-width: 300px;
+  left: -350px;
+  text-align: left;
+  word-break: keep-all;
+  max-width: 450px;
+}
+
+.background-text h2 {
+  font-size: 36px;
+  line-height: 1.2;
+  margin: 0;
+  white-space: normal;
+}
+
+.section-singup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #fdeae8;
+  padding: 20px;
+}
+
+.Logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 150px;
+}
+
+.login-section h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.option-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.option-button {
+  width: 470px;
+  max-width: 470px;
+  padding: 15px;
+  background-color: #fff;
+  color: black;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.option-button:hover {
+  color: black;
+}
+
+.option-group p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  max-width: 550px;
+  text-align: center;
+
+}
 </style>
