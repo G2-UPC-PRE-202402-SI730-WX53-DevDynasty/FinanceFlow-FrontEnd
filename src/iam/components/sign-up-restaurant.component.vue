@@ -1,6 +1,11 @@
 <script>
 export default {
   name: "SignUpRestaurantComponent",
+  methods: {
+    goToPlanRestaurant() {
+      this.$router.push({ name: 'plan-restaurants' });
+    }
+  }
 }
 </script>
 
@@ -64,7 +69,7 @@ export default {
             <input type="text" id="ruc" placeholder="RUC" v-model="ruc" />
           </div>
         </div>
-        <button class="submit-button">Continue</button>
+        <button @click="goToPlanRestaurant" class="submit-button">Continue</button>
       </div>
     </div>
 

@@ -1,6 +1,11 @@
 <script>
 export default {
   name: "PlanRestaurantComponent",
+  methods: {
+    goToPayment() {
+      this.$router.push({ name: 'payment' });
+    }
+  }
 }
 </script>
 
@@ -29,7 +34,7 @@ export default {
         </ul>
         <p>All for S/. 400 monthly</p>
       </div>
-      <button type="submit" class="go-to-login-button">Go back to Log In</button>
+      <button @click="goToPayment" type="submit" class="continue-button">Continue</button>
     </div>
     <img src="../../assets/logo-gastrogo.png" alt="GastroGo Logo" class="Logo" />
   </div>
@@ -56,7 +61,7 @@ export default {
   object-fit: cover;
   position: absolute;
   top: 0;
-  left: -372px;
+  left: -380px;
 }
 
 .background-text {
@@ -116,7 +121,7 @@ input {
   border-radius: 5px;
 }
 
-.go-to-login-button {
+.continue-button {
   width: 385px;
   max-width: 490px;
   padding: 10px;
@@ -130,7 +135,7 @@ input {
   margin-top: 10px;
 }
 
-.go-to-login-button:hover {
+.continue-button:hover {
   background-color: #ff5a21;
 }
 

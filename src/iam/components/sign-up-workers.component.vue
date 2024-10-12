@@ -1,6 +1,11 @@
 <script>
 export default {
   name: "SingUpWorkersComponent",
+  methods: {
+    goToPlanWorkers() {
+      this.$router.push({ name: 'plan-workers' });
+    }
+  }
 }
 </script>
 
@@ -44,18 +49,18 @@ export default {
         </div>
         <div>
           <label for="address">Address</label>
-          <input type="text" id="address" placeholder="Address" v-model="address" />
+          <input type="text" id="address" placeholder="Address" v-model="address"/>
         </div>
         <div>
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Email" v-model="email" />
+          <input type="email" id="email" placeholder="Email" v-model="email"/>
         </div>
         <div>
           <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Password" v-model="password" />
+          <input type="password" id="password" placeholder="Password" v-model="password"/>
         </div>
 
-        <button class="submit-button">Continue</button>
+        <button @click="goToPlanWorkers"  class="submit-button">Continue</button>
       </div>
     </div>
 

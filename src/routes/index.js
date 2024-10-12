@@ -10,6 +10,13 @@ import profileComponent from "@/profile/components/profile-component.vue";
 import MyOrderComponent from "@/order/pages/my-order.component.vue";
 import NotificationsComponent from "@/public/components/notifications-component.vue";
 import loginComponent from "@/iam/pages/login.component.vue";
+import recoverPasswordComponent from "@/iam/components/recover-password.component.vue";
+import successfulRecoverPasswordComponent from "@/iam/components/successful-recover-password.component.vue";
+import SingUpComponent from "@/iam/pages/sing-up.component.vue";
+import SingUpWorkers from "@/iam/components/sign-up-workers.component.vue";
+import SignUpRestaurantComponent from "@/iam/components/sign-up-restaurant.component.vue";
+import planRestaurantComponent from "@/iam/components/plan-restaurant.component.vue";
+import PaymentComponent from "@/iam/components/payment.component.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -20,6 +27,62 @@ const router = createRouter({
             name: 'login',
             component: loginComponent,
             meta: {title: 'LogIn'}
+        },
+        // Recover Password
+        {
+            path: '/recover-password',
+            name: 'recover-password',
+            component: recoverPasswordComponent,
+            meta: {title: 'Recover Password'}
+        },
+        // Successful Recover Password
+        {
+            path: '/success-recover',
+            name: 'success-recover',
+            component: successfulRecoverPasswordComponent,
+            meta: {title: 'Successful Recover Password'}
+        },
+        // Sign Up
+        {
+            path: '/sign-up',
+            name: 'sign-up',
+            component: SingUpComponent,
+            meta: {title: 'Sign Up'}
+        },
+        // Sign Up Workers
+        {
+            path: '/sign-up-workers',
+            name: 'sign-up-workers',
+            component: SingUpWorkers,
+            meta: {title: 'Sign Up Workers'}
+        },
+        // Sign Up Restaurant
+        {
+            path: '/sign-up-restaurants',
+            name: 'sign-up-restaurants',
+            component: SignUpRestaurantComponent,
+            meta: {title: 'Sign Up Restaurants'}
+        },
+        // Plan Restaurant
+        {
+            path: '/plan-restaurants',
+            name: 'plan-restaurants',
+            component: planRestaurantComponent,
+            meta: {title: 'Plan Restaurants'}
+        },
+        // Plan Workers
+        {
+            path: '/plan-workers',
+            name: 'plan-workers',
+            component: planRestaurantComponent,
+            meta: {title: 'Plan Workers'}
+        },
+        // Payment
+        {
+            path: '/payment',
+            name: 'payment',
+            component: PaymentComponent,
+            meta: {title: 'Payment'}
         },
         // Home
         {
