@@ -1,6 +1,6 @@
 <script>
 
-import SidenavBar from "@/public/components/sidenav-bar.vue";
+import SidenavBar from "@/worker/public/components/sidenav-bar.vue";
 
 export default {
   name: 'App',
