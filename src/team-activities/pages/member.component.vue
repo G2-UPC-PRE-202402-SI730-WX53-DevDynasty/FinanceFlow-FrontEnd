@@ -6,10 +6,28 @@ import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 
 export default {
   name: 'members',
+
+  data() {
+    return {
+      teamCode: '',
+      votingCode: '',
+    }
+  },
+
   methods: {
     faCheck() {
       return faCheck
-    }
+    },
+
+    joinTeam() {
+      console.log('Joining team');
+      localStorage.setItem('teamCode', this.teamCode);
+    },
+
+    joinVoting() {
+      console.log('Joining voting');
+      localStorage.setItem('votingCode', this.votingCode);
+    },
   },
   components: {FontAwesomeIcon}
 }
@@ -40,6 +58,7 @@ export default {
           <div class="card join-team">
             <p>Enter code to join: </p>
             <input type="text" class="input-field" placeholder="Enter code here" />
+            <Button @click="joinTeam" class="join-button">Join Team</Button>
           </div>
         </Card>
 
@@ -65,6 +84,7 @@ export default {
           <div class="card join-voting">
             <p>Enter code to join voting:</p>
             <input type="text" class="input-field" placeholder="Enter code here" />
+            <Button @click="joinVoting" class="join-button">Join Voting</Button>
           </div>
         </Card>
 
@@ -106,21 +126,6 @@ export default {
           </div>
         </Card>
 
-        <Card>
-          <div class="card-header">
-            Order Payment
-          </div>
-
-          <div class="card order-payment">
-            <p><strong>Legends</strong> - 25 workers</p>
-            <p>Oshi - Order #00000001 - Total: S/. 400.50</p>
-            <p>Each member pays: S/. 16.02</p>
-            <p>Each member pays for tip: S/. 7.00</p>
-            <Button class="pay-button">Pay</Button>
-          </div>
-        </Card>
-
-
       </div>
     </div>
 
@@ -146,7 +151,7 @@ export default {
   background-color: #FF7338;
   padding: 20px;
   border-radius: 8px 8px 0 0;
-  max-width: 800px;
+  max-width: 880px;
   text-align: center;
   max-height: 76.5px;
   font-size: 24px;
@@ -218,13 +223,14 @@ export default {
   margin-top: 5px;
 }
 
-.pay-button {
+.join-button {
   background-color: #FF7338;
   color: white;
   border: none;
   padding: 10px;
   width: 150px;
   height: 30px;
+  margin-top: 10px;
   border-radius: 5px;
   cursor: pointer;
 }

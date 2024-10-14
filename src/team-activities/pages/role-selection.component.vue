@@ -9,7 +9,7 @@ export default {
     },
 
     goToMember() {
-      this.$router.push('/team-activities/members');
+      this.$router.push('/team-activities/join-a-team');
     }
   }
 }

@@ -3,6 +3,7 @@ import roleSelectionComponent from "@/team-activities/pages/role-selection.compo
 import leaderComponent from "@/team-activities/pages/leader.component.vue";
 import memberComponent from "@/team-activities/pages/member.component.vue";
 import createTeamComponent from "@/team-activities/pages/create-team.component.vue";
+import joinATeamComponent from "@/team-activities/pages/join-a-team.component.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -27,6 +28,7 @@ const router = createRouter({
         //Team Activities
         { path: '/team-activities', name:'team-activities', component: roleSelectionComponent, meta: {title: 'Team Activities'}},
         { path: '/team-activities/create-team', name: 'team-activities-create-team', component: createTeamComponent, meta: { title: 'Create Team' }},
+        { path: '/team-activities/join-a-team', name: 'team-activities-join-a-team', component: joinATeamComponent, meta: { title: 'Join a Team' }},
         { path: '/team-activities/leader', name:'team-activities-leader', component: leaderComponent, meta: {title: 'Leader'}},
         { path: '/team-activities/members', name:'team-activities-members', component: memberComponent, meta: {title: 'Members'}},
 
