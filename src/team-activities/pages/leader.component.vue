@@ -1,16 +1,32 @@
 <script>
 
 import 'primeicons/primeicons.css'
-import { faCheck } from '@fortawesome/free-solid-svg-icons'
+import {faCheck} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 
 export default {
   name: 'leader',
+
+  data() {
+    return {
+      restaurants: [
+        { id: 1, name: 'Ochi', votes: 24 },
+        { id: 2, name: 'Palm & Vine', votes: 1},
+        { id: 3, name: 'La Mar', votes: 0 }
+      ],
+
+      selectedRestaurant1: null,
+      selectedRestaurant2: null,
+
+    }
+  },
+
   methods: {
     faCheck() {
       return faCheck
     }
   },
+
   components: {FontAwesomeIcon}
 }
 
@@ -56,14 +72,27 @@ export default {
             <p>Voting code for meal: 23E-R45</p>
             <div class="vote-options">
               <div class="vote-item">
-                <p><strong>Ochi</strong></p>
-                <Button class="vote-button"><font-awesome-icon :icon="faCheck()"></font-awesome-icon></Button>
-                <p class="results">24</p>
+                <select v-model="selectedRestaurant1">
+                  <option v-for="restaurant in restaurants" :key="restaurant.id">
+                    {{ restaurant.name }}
+                  </option>
+                </select>
+                <Button class="vote-button">
+                  <font-awesome-icon :icon="faCheck()"></font-awesome-icon>
+                </Button>
+                <p class="results"> 24 </p>
               </div>
+              <span class="spacer"></span>
               <div class="vote-item">
-                <p><strong>Palm & Vine</strong></p>
-                <Button class="vote-button"><font-awesome-icon :icon="faCheck()"></font-awesome-icon></Button>
-                <p class="results">1</p>
+                <select v-model="selectedRestaurant2">
+                  <option v-for="restaurant in restaurants" :key="restaurant.id">
+                    {{ restaurant.name }}
+                  </option>
+                </select>
+                <Button class="vote-button">
+                  <font-awesome-icon :icon="faCheck()"></font-awesome-icon>
+                </Button>
+                <p class="results"> 1 </p>
               </div>
             </div>
           </div>
@@ -86,20 +115,6 @@ export default {
           </div>
         </Card>
 
-        <Card>
-          <div class="card-header">
-            Order Payment
-          </div>
-
-          <div class="card order-payment">
-            <p><strong>Legends</strong> - 25 workers</p>
-            <p>Oshi - Order #00000001 - Total: S/. 400.50</p>
-            <p>Each member pays: S/. 16.02</p>
-            <p>Each member pays for tip: S/. 7.00</p>
-            <Button class="pay-button">Pay</Button>
-          </div>
-        </Card>
-
       </div>
     </div>
 
@@ -110,7 +125,7 @@ export default {
 
 .leader-container {
   padding: 20px;
-  margin-left: 80px;
+  margin-left: 200px;
   height: 100%;
   width: 100%;
   justify-content: center;
@@ -126,7 +141,7 @@ export default {
   background-color: #FF7338;
   padding: 20px;
   border-radius: 8px 8px 0 0;
-  max-width: 800px;
+  max-width: 1000px;
   text-align: center;
   max-height: 76.5px;
   font-size: 24px;
@@ -194,19 +209,9 @@ export default {
   background-color: #FAB091;
 }
 
-.pay-button {
-  background-color: #FF7338;
-  color: white;
-  border: none;
-  padding: 10px;
-  width: 150px;
-  height: 30px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 .results {
-  margin-top: 5px;
+  margin-top: 10px;
+
 }
 
 select {
@@ -214,6 +219,11 @@ select {
   border-radius: 5px;
   border: 1px solid #FF7338;
   width: 100%;
+  margin-bottom: 20px;
+}
+
+.spacer {
+  margin-left: 20px;
 }
 
 

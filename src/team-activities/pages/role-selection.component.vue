@@ -5,7 +5,7 @@ export default {
 
   methods: {
     goToLeader() {
-      this.$router.push('/team-activities/leader');
+      this.$router.push('/team-activities/create-team');
     },
 
     goToMember() {
