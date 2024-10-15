@@ -2,8 +2,8 @@ import {createRouter, createWebHistory} from "vue-router";
 import roleSelectionComponent from "@/worker/team-activities/pages/role-selection.component.vue";
 import leaderComponent from "@/worker/team-activities/pages/leader.component.vue";
 import memberComponent from "@/worker/team-activities/pages/member.component.vue";
-import createTeamComponent from "@/worker/team-activities/pages/create-team.component.vue";
-import joinATeamComponent from "@/worker/team-activities/pages/join-a-team.component.vue";
+import createTeamComponent from "@/worker/team-activities/components/create-team.component.vue";
+import joinATeamComponent from "@/worker/team-activities/components/join-a-team.component.vue";
 
 const router = createRouter({
     history: createWebHistory(),

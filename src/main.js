@@ -1,5 +1,5 @@
 import './assets/main.css'
-import Card from 'primevue/card';
+
 import InputText from "primevue/inputtext";
 import FloatLabel from "primevue/floatlabel";
 
@@ -13,7 +13,7 @@ import Card from "primevue/card";
 const app = createApp(App);
 
 app.use(PrimeVue, {ripple: true});
-app.component('Card', Card);
+app.component('pv-card', Card);
 app.component('InputText', InputText);
 app.component('FloatLabel', FloatLabel);
 
