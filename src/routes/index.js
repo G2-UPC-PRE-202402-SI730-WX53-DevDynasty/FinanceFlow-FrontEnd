@@ -20,6 +20,7 @@ import PaymentComponent from "@/iam/components/payment.component.vue";
 import listMenus from "@/restaurant/menu/pages/menus.component.vue";
 import menusComponent from "@/restaurant/menu/pages/menus.component.vue";
 import menuDetailsComponent from "@/restaurant/menu/pages/menu-details.component.vue";
+import addMenuComponent from "@/restaurant/menu/components/add-menu.component.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -173,6 +174,14 @@ const router = createRouter({
             name: 'menus-details',
             component: menuDetailsComponent,
             meta: {title: 'Menu Details'}
+        },
+
+        // Add menu
+        {
+            path: '/menus/add-menu',
+            name: 'add-menu',
+            component: addMenuComponent,
+            meta: {title: 'Add Menu'}
         }
 
     ]

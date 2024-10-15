@@ -18,7 +18,7 @@ export default {
     },
 
     addMenu() {
-      this.$router.push('/add-menu');
+      this.$router.push('/menus/add-menu');
     }
   }
 };
