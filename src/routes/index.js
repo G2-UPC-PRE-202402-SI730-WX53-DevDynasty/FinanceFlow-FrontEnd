@@ -1,14 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import RestaurantView from '@/restaurant/components/restaurant-view.vue';
-import RestaurantDetailsView from '@/restaurant/components/restaurant-details-view.vue';
-import RestaurantMenuView from "@/restaurant/components/restaurant-menu-view.vue";
-import roleSelectionComponent from "@/team-activities/components/role-selection.component.vue";
-import leaderComponent from "@/team-activities/components/leader.component.vue";
-import memberComponent from "@/team-activities/components/member.component.vue";
-import homeComponent from "@/home/components/home.component.vue";
-import profileComponent from "@/profile/components/profile-component.vue";
-import MyOrderComponent from "@/order/pages/my-order.component.vue";
-import NotificationsComponent from "@/public/components/notifications-component.vue";
+import RestaurantView from '@/worker/restaurant/components/restaurant-view.vue';
+import RestaurantDetailsView from '@/worker/restaurant/components/restaurant-details-view.vue';
+import RestaurantMenuView from "@/worker/restaurant/components/restaurant-menu-view.vue";
+import roleSelectionComponent from "@/worker/team-activities/components/role-selection.component.vue";
+import leaderComponent from "@/worker/team-activities/components/leader.component.vue";
+import memberComponent from "@/worker/team-activities/components/member.component.vue";
+import homeComponent from "@/worker/home/components/home.component.vue";
+import profileComponent from "@/worker/profile/components/profile-component.vue";
+import MyOrderComponent from "@/worker/order/pages/my-order.component.vue";
+import NotificationsComponent from "@/worker/public/components/notifications-component.vue";
 import loginComponent from "@/iam/pages/login.component.vue";
 import recoverPasswordComponent from "@/iam/components/recover-password.component.vue";
 import successfulRecoverPasswordComponent from "@/iam/components/successful-recover-password.component.vue";
@@ -17,10 +17,16 @@ import SingUpWorkers from "@/iam/components/sign-up-workers.component.vue";
 import SignUpRestaurantComponent from "@/iam/components/sign-up-restaurant.component.vue";
 import planRestaurantComponent from "@/iam/components/plan-restaurant.component.vue";
 import PaymentComponent from "@/iam/components/payment.component.vue";
+import listMenus from "@/restaurant/menu/pages/menus.component.vue";
+import menusComponent from "@/restaurant/menu/pages/menus.component.vue";
+import menuDetailsComponent from "@/restaurant/menu/pages/menu-details.component.vue";
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
+
+        // Worker
+
         // Log In
         {
             path: '/login',
@@ -150,6 +156,24 @@ const router = createRouter({
             component: NotificationsComponent,
             meta: {title: 'Notifications'}
         },
+
+        // restaurant
+
+        // Menus
+        {
+            path: '/menus',
+            name: 'menus',
+            component: menusComponent,
+            meta: {title: 'Menus'}
+        },
+
+        // Menus details
+        {
+            path: '/menus/:id',
+            name: 'menus-details',
+            component: menuDetailsComponent,
+            meta: {title: 'Menu Details'}
+        }
 
     ]
 });
