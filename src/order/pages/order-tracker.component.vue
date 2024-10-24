@@ -19,7 +19,7 @@ export default {
       <div class="order-tracker-card">
         <Card>
           <div class="card-content">
-            <img src="../../assets/order-tracker.png" alt="OrderTracker image" class="orderTracker-image"/>
+            <img src="../../assets/reference-map.png" alt="OrderTracker image" class="orderTracker-image"/>
             <div class="info-card">
               <p><strong>Your order is: </strong></p>
               <div class="tracker-item">
