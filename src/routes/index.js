@@ -20,8 +20,8 @@ const router = createRouter({
             component: RestaurantDetailsView
         },
         {
-            path: '/restaurant/:id/menu',
-            name: 'restaurant-menu',
+            path: '/restaurant/:name/menu',
+            name: 'restaurant-menu-view',
             component: RestaurantMenuView
         },
         // Orders
