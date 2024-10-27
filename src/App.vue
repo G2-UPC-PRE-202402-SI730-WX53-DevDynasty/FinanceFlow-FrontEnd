@@ -1,7 +1,7 @@
 <script>
 
 import SidenavBar from "@/public/components/sidenav-bar.vue";
-import ProfileComponent from "@/profile/components/profile-component.vue";
+import ProfileComponent from "@/worker/profile/components/profile-component.vue";
 
 export default {
   name: 'App',
