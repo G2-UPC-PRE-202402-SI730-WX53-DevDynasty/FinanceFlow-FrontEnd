@@ -150,6 +150,7 @@ h1 {
 
 .comment-avatar {
   flex-shrink: 0;
+  margin: 20px;
 }
 
 .comment-content h4 {
