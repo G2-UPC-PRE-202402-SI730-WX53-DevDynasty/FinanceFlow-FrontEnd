@@ -1,28 +1,7 @@
-<script>
-export default {
-  name: "PlanRestaurantComponent",
-  methods: {
-    goToPayment() {
-      this.$router.push({ name: 'payment' });
-    }
-  }
-}
-</script>
-
 <template>
   <div class="login-page">
-    <div class="background-section">
-      <img src="../../assets/backgroung-introduction.png" alt="Restaurant Image" class="restaurant-image" />
-      <div class="background-text">
-        <h2>
-          Transform your meals <br>
-          into a flavoury <br>
-          experience&nbsp;beyond&nbsp;your <br>
-          imaginations and get it <br>
-          quickly!
-        </h2>
-      </div>
-    </div>
+    <AuthBackgroundComponent />
+
     <div class="login-section">
       <h1>This is your plan</h1>
       <div class="section-plan">
@@ -36,51 +15,31 @@ export default {
       </div>
       <button @click="goToPayment" type="submit" class="continue-button">Continue</button>
     </div>
-    <img src="../../assets/logo-gastrogo.png" alt="GastroGo Logo" class="Logo" />
+
   </div>
 </template>
 
-<style>
+<script>
+import AuthBackgroundComponent from "@/public/components/auth-background.component.vue";
+export default {
+  name: "PlanRestaurantComponent",
+  components: {
+    AuthBackgroundComponent
+  },
+  methods: {
+    goToPayment() {
+      this.$router.push({ name: 'payment' });
+    }
+  }
+}
+</script>
+
+<style scoped>
 .login-page {
   display: flex;
   height: 100vh;
 }
 
-.background-section {
-  width: 720px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
-.restaurant-image {
-  width: 110%;
-  height: 100vh;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: -380px;
-}
-
-.background-text {
-  position: relative;
-  z-index: 1;
-  padding: 20px;
-  max-width: 300px;
-  left: -350px;
-  text-align: left;
-  word-break: keep-all;
-  max-width: 450px;
-}
-
-.background-text h2 {
-  font-size: 36px;
-  line-height: 1.2;
-  margin: 0;
-  white-space: normal;
-}
 .login-section {
   flex: 1;
   display: flex;
@@ -89,14 +48,10 @@ export default {
   align-items: flex-start;
   background-color: #fdeae8;
   padding: 20px;
+  margin-left: 250px;
 }
 
-.Logo {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 150px;
-}
+
 
 .login-section h1 {
   font-size: 40px;
@@ -107,18 +62,6 @@ export default {
   width: 100%;
   max-width: 400px;
   margin-bottom: 20px;
-}
-
-label {
-  display: block;
-  margin-bottom: 15px;
-}
-
-input {
-  width: 458px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
 }
 
 .continue-button {
@@ -138,5 +81,4 @@ input {
 .continue-button:hover {
   background-color: #ff5a21;
 }
-
 </style>

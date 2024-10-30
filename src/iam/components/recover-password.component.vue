@@ -1,6 +1,30 @@
+<template>
+  <div class="login-page">
+    <AuthBackgroundComponent />
+
+    <div class="login-section">
+      <h1>Recover your Password</h1>
+      <form>
+        <div class="form-group">
+          <div class="input-container">
+            <label class="input-label" for="email">Email</label>
+            <input class="input-field" type="email" id="email" placeholder="Enter your email" required />
+          </div>
+        </div>
+        <button @click="goToSuccessfulRecoverPassword" type="submit" class="send-button">Send</button>
+      </form>
+    </div>
+  </div>
+</template>
+
 <script>
+import AuthBackgroundComponent from "@/public/components/auth-background.component.vue";
+
 export default {
   name: "RecoverPasswordComponent",
+  components: {
+    AuthBackgroundComponent
+  },
   methods: {
     goToSuccessfulRecoverPassword() {
       this.$router.push({ name: 'success-recover' });
@@ -9,74 +33,12 @@ export default {
 }
 </script>
 
-<template>
-  <div class="login-page">
-    <div class="background-section">
-      <img src="../../assets/backgroung-introduction.png" alt="Restaurant Image" class="restaurant-image" />
-      <div class="background-text">
-        <h2>
-          Transform your meals <br>
-          into a flavoury <br>
-          experience&nbsp;beyond&nbsp;your <br>
-          imaginations and get it <br>
-          quickly!
-        </h2>
-      </div>
-    </div>
-    <div class="login-section">
-      <h1>Recover your Password</h1>
-      <form>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Enter your email" required />
-        </div>
-        <button  @click="goToSuccessfulRecoverPassword" type="submit" class="send-button">Send</button>
-      </form>
-    </div>
-    <img src="../../assets/logo-gastrogo.png" alt="GastroGo Logo" class="Logo" />
-  </div>
-</template>
-
-<style>
+<style scoped>
 .login-page {
   display: flex;
   height: 100vh;
 }
 
-.background-section {
-  width: 720px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
-.restaurant-image {
-  width: 110%;
-  height: 100vh;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: -351px;
-}
-
-.background-text {
-  position: relative;
-  z-index: 1;
-  padding: 20px;
-  left: -350px;
-  text-align: left;
-  word-break: keep-all;
-  max-width: 450px;
-}
-
-.background-text h2 {
-  font-size: 36px;
-  line-height: 1.2;
-  margin: 0;
-  white-space: normal;
-}
 .login-section {
   flex: 1;
   display: flex;
@@ -85,13 +47,7 @@ export default {
   align-items: flex-start;
   background-color: #fdeae8;
   padding: 20px;
-}
-
-.Logo {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 150px;
+  margin-left: 220px;
 }
 
 .login-section h1 {
@@ -105,21 +61,26 @@ export default {
   margin-bottom: 20px;
 }
 
-label {
-  display: block;
-  margin-bottom: 15px;
+.input-container {
+  display: flex;
+  flex-direction: column;
 }
 
-input {
-  width: 458px;
+.input-label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-field {
+  width: 240%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
 .send-button {
-  width: 458px;
-  max-width: 458px;
+  width: 240%;
   padding: 10px;
   background-color: #ff6f3f;
   color: white;
@@ -134,5 +95,4 @@ input {
 .send-button:hover {
   background-color: #ff5a21;
 }
-
 </style>

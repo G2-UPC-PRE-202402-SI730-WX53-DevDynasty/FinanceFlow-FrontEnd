@@ -1,100 +1,61 @@
 <script>
+import AuthBackgroundComponent from "@/public/components/auth-background.component.vue";
 export default {
   name: "PaymentComponent",
+  components: {
+    AuthBackgroundComponent
+  },
+  methods: {
+    goToHome() {
+      this.$router.push({ name: 'home' });
+    }
+  }
 }
 </script>
 
 <template>
   <div class="login-page">
-    <div class="background-section">
-      <img src="../../assets/backgroung-introduction.png" alt="Restaurant Image" class="restaurant-image" />
-      <div class="background-text">
-        <h2>
-          Transform your meals <br>
-          into a flavoury <br>
-          experience&nbsp;beyond&nbsp;your <br>
-          imaginations and get it <br>
-          quickly!
-        </h2>
-      </div>
-    </div>
+    <AuthBackgroundComponent />
 
     <div class="register-section">
       <h1>Payment: Credit/Debit Card</h1>
       <div class="form-group">
         <div class="input-row">
-          <div >
-            <label class="input-small" for="name">Name</label>
-            <input type="text" id="name" placeholder="Name" v-model="name" />
+          <div class="input-container input-small">
+            <label class="input-label" for="name">Name</label>
+            <input class="input-field" type="text" id="name" placeholder="Name" v-model="name" />
           </div>
-          <div >
-            <label class="input-small" for="lastNames">Last Names</label>
-            <input type="text" id="lastNames" placeholder="Last Names" v-model="lastNames" />
+          <div class="input-container input-small">
+            <label class="input-label" for="lastNames">Last Names</label>
+            <input class="input-field" type="text" id="lastNames" placeholder="Last Names" v-model="lastNames" />
           </div>
         </div>
 
-        <div>
-          <label for="card-number">Card Number</label>
-          <input type="text" id="card-number" placeholder="Card Number" v-model="cardnumber"/>
+        <div class="input-container">
+          <label class="input-label" for="card-number">Card Number</label>
+          <input class="input-field" type="text" id="card-number" placeholder="Card Number" v-model="cardnumber" />
         </div>
         <div class="input-row">
-          <div class="input-small">
-            <label for="expiry-date">Expiry Date</label>
-            <input type="text" id="expiry-date" placeholder="Expiry Date" v-model="expirydate"/>
+          <div class="input-container input-small">
+            <label class="input-label" for="expiry-date">Expiry Date</label>
+            <input class="input-field" type="text" id="expiry-date" placeholder="Expiry Date" v-model="expirydate" />
           </div>
-          <div class="input-small">
-            <label for="ccv">CCV</label>
-            <input type="text" id="ccv" placeholder="CCV" v-model="ccv"/>
+          <div class="input-container input-small">
+            <label class="input-label" for="ccv">CCV</label>
+            <input class="input-field" type="text" id="ccv" placeholder="CCV" v-model="ccv" />
           </div>
         </div>
-        <button class="submit-button">Continue in the app</button>
+        <button class="submit-button" @click="goToHome">Continue in the app</button>
       </div>
     </div>
-
-    <img src="../../assets/logo-gastrogo.png" alt="GastroGo Logo" class="Logo" />
   </div>
 </template>
+
 
 <style scoped>
 .login-page {
   display: flex;
   height: 100vh;
-}
-
-.background-section {
-  width: 720px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
-.restaurant-image {
-  width: 110%;
-  height: 100vh;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: -300px;
-}
-
-.background-text {
-  position: relative;
-  z-index: 1;
-  padding: 20px;
-  max-width: 300px;
-  left: -250px;
-  text-align: left;
-  word-break: keep-all;
-  max-width: 450px;
-}
-
-.background-text h2 {
-  font-size: 36px;
-  line-height: 1.2;
-  margin: 0;
-  white-space: normal;
 }
 
 .register-section {
@@ -103,6 +64,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-left: 150px;
 }
 
 .register-section h1 {
@@ -119,27 +81,31 @@ export default {
 
 .input-row {
   display: flex;
-  gap: 90px;
+  gap: 20px;
 }
 
-input {
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-field {
   padding: 12px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 133%;
+  width: 100%;
   margin-bottom: 5px;
 }
 
-.input-small{
-  min-width: 190px;
-}
-
-label {
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  display: block;
+.input-small {
+  min-width: 255px;
 }
 
 button.submit-button {
@@ -160,12 +126,4 @@ button.submit-button {
 button.submit-button:hover {
   background-color: #e65b30;
 }
-
-.Logo {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 150px;
-}
-
 </style>

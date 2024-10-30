@@ -1,6 +1,10 @@
 <script>
+import AuthBackgroundComponent from "@/public/components/auth-background.component.vue";
 export default {
   name: "SignUpRestaurantComponent",
+  components: {
+    AuthBackgroundComponent
+  },
   methods: {
     goToPlanRestaurant() {
       this.$router.push({ name: 'plan-restaurants' });
@@ -11,112 +15,64 @@ export default {
 
 <template>
   <div class="login-page">
-    <div class="background-section">
-      <img src="../../assets/backgroung-introduction.png" alt="Restaurant Image" class="restaurant-image" />
-      <div class="background-text">
-        <h2>
-          Transform your meals <br>
-          into a flavoury <br>
-          experience&nbsp;beyond&nbsp;your <br>
-          imaginations and get it <br>
-          quickly!
-        </h2>
-      </div>
-    </div>
+    <AuthBackgroundComponent />
 
     <div class="register-section">
       <h1>Enter the information of <br>your restaurant</h1>
       <div class="form-group">
         <div class="input-row">
-          <div >
-            <label class="input-small" for="name">Name</label>
-            <input type="text" id="name" placeholder="Name" v-model="name" />
+          <div class="input-container input-small">
+            <label class="input-label" for="name">Name</label>
+            <input class="input-field" type="text" id="name" placeholder="Name" v-model="name" />
           </div>
-          <div >
-            <label class="input-small" for="lastNames">Last Names</label>
-            <input type="text" id="lastNames" placeholder="Last Names" v-model="lastNames" />
+          <div class="input-container input-small">
+            <label class="input-label" for="lastNames">Last Names</label>
+            <input class="input-field" type="text" id="lastNames" placeholder="Last Names" v-model="lastNames" />
           </div>
         </div>
         <div class="input-row">
-          <div >
-            <label class="input-small" for="restaurantName">Restaurant Name</label>
-            <input type="text" id="restaurantName" placeholder="Restaurant Name" v-model="restaurantName" />
+          <div class="input-container input-small">
+            <label class="input-label" for="restaurantName">Restaurant Name</label>
+            <input class="input-field" type="text" id="restaurantName" placeholder="Restaurant Name" v-model="restaurantName" />
           </div>
-          <div >
-            <label class="input-small" for="telephoneNumber">Telephone Number</label>
-            <input type="text" id="telephoneNumber" placeholder="Telephone Number" v-model="telephoneNumber" />
+          <div class="input-container input-small">
+            <label class="input-label" for="telephoneNumber">Telephone Number</label>
+            <input class="input-field" type="text" id="telephoneNumber" placeholder="Telephone Number" v-model="telephoneNumber" />
           </div>
         </div>
-        <div>
-          <label for="address">Address</label>
-          <input type="text" id="address" placeholder="Address" v-model="address" />
+        <div class="input-container">
+          <label class="input-label" for="address">Address</label>
+          <input class="input-field" type="text" id="address" placeholder="Address" v-model="address" />
         </div>
-        <div>
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Email" v-model="email" />
+        <div class="input-container">
+          <label class="input-label" for="email">Email</label>
+          <input class="input-field" type="email" id="email" placeholder="Email" v-model="email" />
         </div>
-        <div>
-          <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Password" v-model="password" />
+        <div class="input-container">
+          <label class="input-label" for="password">Password</label>
+          <input class="input-field" type="password" id="password" placeholder="Password" v-model="password" />
         </div>
         <div class="input-row">
-          <div class="input-small">
-            <label for="dni">DNI</label>
-            <input type="text" id="dni" placeholder="DNI" v-model="dni" />
+          <div class="input-container input-small">
+            <label class="input-label" for="dni">DNI</label>
+            <input class="input-field" type="text" id="dni" placeholder="DNI" v-model="dni" />
           </div>
-          <div class="input-small">
-            <label for="ruc">RUC</label>
-            <input type="text" id="ruc" placeholder="RUC" v-model="ruc" />
+          <div class="input-container input-small">
+            <label class="input-label" for="ruc">RUC</label>
+            <input class="input-field" type="text" id="ruc" placeholder="RUC" v-model="ruc" />
           </div>
         </div>
         <button @click="goToPlanRestaurant" class="submit-button">Continue</button>
       </div>
     </div>
-
-    <img src="../../assets/logo-gastrogo.png" alt="GastroGo Logo" class="Logo" />
   </div>
 </template>
+
 
 <style scoped>
 .login-page {
   display: flex;
   height: 100vh;
-}
-
-.background-section {
-  width: 720px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
-.restaurant-image {
-  width: 110%;
-  height: 100vh;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: -335px;
-}
-
-.background-text {
-  position: relative;
-  z-index: 1;
-  padding: 20px;
-  max-width: 300px;
-  left: -250px;
-  text-align: left;
-  word-break: keep-all;
-  max-width: 450px;
-}
-
-.background-text h2 {
-  font-size: 36px;
-  line-height: 1.2;
-  margin: 0;
-  white-space: normal;
 }
 
 .register-section {
@@ -125,6 +81,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-left: 150px;
 }
 
 .register-section h1 {
@@ -141,28 +98,31 @@ export default {
 
 .input-row {
   display: flex;
-  justify-content: space-between;
-  gap: 70px;
+  gap: 30px;
 }
 
-input {
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-field {
   padding: 12px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 122%;
+  width: 100%;
   margin-bottom: 5px;
 }
 
-.input-small{
-  min-width: 188px;
-}
-
-label {
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  display: block;
+.input-small {
+  min-width: 250px;
 }
 
 button.submit-button {
@@ -176,18 +136,10 @@ button.submit-button {
   cursor: pointer;
   text-align: center;
   margin-top: 20px;
-  width: 490px;
+  width: 530px;
 }
 
 button.submit-button:hover {
   background-color: #e65b30;
 }
-
-.Logo {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 150px;
-}
-
 </style>
