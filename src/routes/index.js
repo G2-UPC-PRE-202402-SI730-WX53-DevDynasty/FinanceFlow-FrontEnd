@@ -12,7 +12,7 @@ import NotificationsComponent from "@/public/components/notifications-component.
 import loginComponent from "@/iam/pages/login.component.vue";
 import recoverPasswordComponent from "@/iam/components/recover-password.component.vue";
 import successfulRecoverPasswordComponent from "@/iam/components/successful-recover-password.component.vue";
-import SingUpComponent from "@/iam/pages/sing-up.component.vue";
+import SignUpWorkersComponent from "@/iam/components/sign-up-workers.component.vue";
 import SingUpWorkers from "@/iam/components/sign-up-workers.component.vue";
 import SignUpRestaurantComponent from "@/iam/components/sign-up-restaurant.component.vue";
 import planRestaurantComponent from "@/iam/components/plan-restaurant.component.vue";
@@ -46,7 +46,7 @@ const router = createRouter({
         {
             path: '/sign-up',
             name: 'sign-up',
-            component: SingUpComponent,
+            component: SignUpWorkersComponent,
             meta: {title: 'Sign Up'}
         },
         // Sign Up Workers
