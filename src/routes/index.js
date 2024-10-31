@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import RestaurantView from '@/worker/restaurant/components/restaurant-view.vue';
 import RestaurantDetailsView from '@/worker/restaurant/components/restaurant-details-view.vue';
 import RestaurantMenuView from "@/worker/restaurant/components/restaurant-menu-view.vue";
-import RestaurantOrderDetailsView from "@/restaurant/components/restaurant-order-details-view.vue";
+import RestaurantOrderDetailsView from "@/worker/restaurant/components/restaurant-order-details-view.vue";
 import roleSelectionComponent from "@/worker/team-activities/pages/role-selection.component.vue";
 import leaderComponent from "@/worker/team-activities/pages/leader.component.vue";
 import memberComponent from "@/worker/team-activities/pages/member.component.vue";

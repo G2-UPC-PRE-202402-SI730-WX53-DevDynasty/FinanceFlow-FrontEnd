@@ -7,22 +7,22 @@ export default {
         name: 'Ochi',
       },
       appetizers: [
-        { name: 'Edamame', stock: 23, quantity: 0 },
-        { name: 'Gyozas', stock: 20, quantity: 0 },
+        {name: 'Edamame', stock: 23, quantity: 0},
+        {name: 'Gyozas', stock: 20, quantity: 0},
       ],
       mainDishes: [
-        { name: 'Sushi Nigiri', stock: 21, quantity: 0 },
-        { name: 'Ramen de Cerdo', stock: 42, quantity: 0 },
+        {name: 'Sushi Nigiri', stock: 21, quantity: 0},
+        {name: 'Ramen de Cerdo', stock: 42, quantity: 0},
       ],
       drinks: [
-        { name: 'Sake', stock: 15, quantity: 0 },
-        { name: 'Te Verde (Matcha)', stock: 30, quantity: 0 },
+        {name: 'Sake', stock: 15, quantity: 0},
+        {name: 'Te Verde (Matcha)', stock: 30, quantity: 0},
       ]
     };
   },
   methods: {
     goToOrderDetails() {
-      this.$router.push({ name: 'restaurant-order-details', params: { name: this.restaurant.name } });
+      this.$router.push({name: 'restaurant-order-details', params: {name: this.restaurant.name}});
     }
   }
 };
@@ -48,7 +48,7 @@ export default {
           <div class="menu-item" v-for="item in appetizers" :key="item.name">
             <span class="item-name">{{ item.name }}</span>
             <span class="item-stock">{{ item.stock }}</span>
-            <input type="number" v-model="item.quantity" min="0" :max="item.stock" class="item-quantity" />
+            <input type="number" v-model="item.quantity" min="0" :max="item.stock" class="item-quantity"/>
           </div>
         </div>
 
@@ -57,7 +57,7 @@ export default {
           <div class="menu-item" v-for="item in mainDishes" :key="item.name">
             <span class="item-name">{{ item.name }}</span>
             <span class="item-stock">{{ item.stock }}</span>
-            <input type="number" v-model="item.quantity" min="0" :max="item.stock" class="item-quantity" />
+            <input type="number" v-model="item.quantity" min="0" :max="item.stock" class="item-quantity"/>
           </div>
         </div>
 
@@ -66,12 +66,12 @@ export default {
           <div class="menu-item" v-for="item in drinks" :key="item.name">
             <span class="item-name">{{ item.name }}</span>
             <span class="item-stock">{{ item.stock }}</span>
-            <input type="number" v-model="item.quantity" min="0" :max="item.stock" class="item-quantity" />
+            <input type="number" v-model="item.quantity" min="0" :max="item.stock" class="item-quantity"/>
           </div>
         </div>
       </div>
 
-      <p-button
+      <pv-button
           label="Order"
           class="order-button"
           @click="goToOrderDetails()"/>

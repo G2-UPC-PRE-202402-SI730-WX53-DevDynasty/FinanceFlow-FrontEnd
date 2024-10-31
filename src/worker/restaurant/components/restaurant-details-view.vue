@@ -12,9 +12,9 @@ export default {
         image: '@/src/assets/restaurant-1.jpg',
       },
       comments: [
-        { id: 1, author: 'Lily E.', text: "Didn't convince me a lot. It wasn't that bad but it could be better." },
-        { id: 2, author: 'Maria M.', text: 'I want to have more meals from here, it was just so delicious.' },
-        { id: 3, author: 'José L.', text: 'Want to order again already. It was a great meal!' }
+        {id: 1, author: 'Lily E.', text: "Didn't convince me a lot. It wasn't that bad but it could be better."},
+        {id: 2, author: 'Maria M.', text: 'I want to have more meals from here, it was just so delicious.'},
+        {id: 3, author: 'José L.', text: 'Want to order again already. It was a great meal!'}
       ]
     }
   },
@@ -23,7 +23,7 @@ export default {
       return '★'.repeat(rating) + '☆'.repeat(5 - rating)
     },
     goToMenu() {
-      this.$router.push({ name: 'restaurant-menu-view', params: { name: this.restaurant.name } });
+      this.$router.push({name: 'restaurant-menu-view', params: {name: this.restaurant.name}});
     }
   }
 }
@@ -36,7 +36,7 @@ export default {
         <template #content>
           <div class="card-content">
             <div class="card-image">
-              <img src="../../../assets/restaurant-1.jpg" alt="Restaurant image" class="restaurant-image" />
+              <img src="@/assets/restaurant-1.jpg" alt="Restaurant image" class="restaurant-image"/>
             </div>
             <div class="card-info">
               <h2>{{ restaurant.name }}</h2>
@@ -60,7 +60,7 @@ export default {
         <pv-card v-for="comment in comments" :key="comment.id" class="comment-card">
           <template #content>
             <div class="comment">
-              <pv-avatar icon="pi pi-user" shape="circle" />
+              <pv-avatar icon="pi pi-user" shape="circle"/>
               <div class="comment-text">
                 <h4>{{ comment.author }}</h4>
                 <p>{{ comment.text }}</p>

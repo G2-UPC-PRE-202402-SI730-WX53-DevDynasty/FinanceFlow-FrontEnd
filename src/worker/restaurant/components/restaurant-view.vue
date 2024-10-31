@@ -25,10 +25,10 @@ export default {
         {
           name: 'Type of Food',
           states: [
-            { cname: 'Asian', code: 'AS' },
-            { cname: 'Italian', code: 'IT' },
-            { cname: 'Mexican', code: 'MX' },
-            { cname: 'Vegetarian', code: 'VE' }
+            {cname: 'Asian', code: 'AS'},
+            {cname: 'Italian', code: 'IT'},
+            {cname: 'Mexican', code: 'MX'},
+            {cname: 'Vegetarian', code: 'VE'}
           ]
         }
       ],
@@ -36,11 +36,11 @@ export default {
         {
           name: 'Rating',
           states: [
-            { cname: '5 Stars', code: 5 },
-            { cname: '4 Stars', code: 4 },
-            { cname: '3 Stars', code: 3 },
-            { cname: '2 Stars', code: 2 },
-            { cname: '1 Star', code: 1 }
+            {cname: '5 Stars', code: 5},
+            {cname: '4 Stars', code: 4},
+            {cname: '3 Stars', code: 3},
+            {cname: '2 Stars', code: 2},
+            {cname: '1 Star', code: 1}
           ]
         }
       ]
@@ -51,7 +51,7 @@ export default {
       return '★'.repeat(rating) + '☆'.repeat(5 - rating);
     },
     goToDetails(name) {
-      this.$router.push({ name: 'RestaurantDetailsView', params: { name } });
+      this.$router.push({name: 'RestaurantDetailsView', params: {name}});
     }
   }
 };
@@ -70,8 +70,8 @@ export default {
             <label for="restaurant-search" class="search-label">Search for a restaurant</label>
           </div>
           <div class="search-input-container">
-            <p-input-text id="restaurant-search" class="search-input-text" />
-            <p-button class="p-button-outlined p-button-sm search-button" label="Search" />
+            <pv-input-text id="restaurant-search" class="search-input-text"/>
+            <pv-button class="p-button-outlined p-button-sm search-button" label="Search"/>
           </div>
         </div>
 
@@ -85,7 +85,7 @@ export default {
                 optionGroupLabel="name"
                 :optionGroupChildren="['states']"
                 placeholder="Select Type"
-                class="cascade-select" />
+                class="cascade-select"/>
           </div>
           <div class="filter-item">
             <label for="rating">Rating</label>
@@ -96,17 +96,17 @@ export default {
                 optionGroupLabel="name"
                 :optionGroupChildren="['states']"
                 placeholder="Select Rating"
-                class="cascade-select" />
+                class="cascade-select"/>
           </div>
         </div>
       </div>
 
       <div class="restaurant-list">
-        <p-card v-for="restaurant in restaurants" :key="restaurant.name" class="restaurant-card">
+        <pv-card v-for="restaurant in restaurants" :key="restaurant.name" class="restaurant-card">
           <template #content>
             <div class="card-content">
               <div class="card-image">
-                <img :src="restaurant.image" alt="Restaurant image" class="restaurant-image" />
+                <img :src="restaurant.image" alt="Restaurant image" class="restaurant-image"/>
               </div>
 
               <div class="card-info">
@@ -114,14 +114,14 @@ export default {
                 <p>Address: {{ restaurant.address }}</p>
                 <p>Schedule: {{ restaurant.schedule }}</p>
                 <p>Rating: <span class="stars">{{ renderStars(restaurant.rating) }}</span></p>
-                <p-button
+                <pv-button
                     label="Read more"
                     class="read-more-button"
-                    @click="goToDetails(restaurant.name)" />
+                    @click="goToDetails(restaurant.name)"/>
               </div>
             </div>
           </template>
-        </p-card>
+        </pv-card>
       </div>
     </div>
   </div>
@@ -262,6 +262,7 @@ h1 {
   border-radius: 5px;
   padding: 5px 0 5px 0;
 }
+
 .filters {
   display: flex;
   gap: 10px;

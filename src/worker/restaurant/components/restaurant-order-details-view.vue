@@ -37,7 +37,7 @@ export default {
       this.showPaymentDialog = false;
       this.showCommentDialog = true;
     },
-    goToOrders(){
+    goToOrders() {
       this.showCommentDialog = false;
     }
   }
@@ -55,7 +55,8 @@ export default {
         <div class="order-info-section">
           <p><strong>Restaurant:</strong> {{ restaurant.name }}</p>
           <p><strong>Date:</strong> {{ restaurant.date }}</p>
-          <p><strong>Delivery Time:</strong> <span class="delivery-time-display">{{ restaurant.deliveryTime }}</span></p>
+          <p><strong>Delivery Time:</strong> <span class="delivery-time-display">{{ restaurant.deliveryTime }}</span>
+          </p>
         </div>
         <div class="order-info-section">
           <p><strong>Order Id:</strong> {{ restaurant.orderId }}</p>
@@ -90,8 +91,8 @@ export default {
       </div>
 
       <div class="buttons">
-        <p-button label="Cancel" class="cancel-button" @click="cancelOrder" />
-        <p-button label="Pay Order" class="pay-button" @click="payOrder" />
+        <pv-button label="Cancel" class="cancel-button" @click="cancelOrder"/>
+        <pv-button label="Pay Order" class="pay-button" @click="payOrder"/>
       </div>
     </div>
     <p-dialog v-model:visible="showPaymentDialog" :style="{ width: '400px' }" modal class="payment-dialog">
@@ -106,14 +107,14 @@ export default {
           <p><strong>Each member pays:</strong> <span class="info-value">S/. 16.02</span></p>
           <p><strong>Each member pays for tip:</strong> <span class="info-value">S/. 7.00</span></p>
         </div>
-        <p-button label="Confirm Payment" class="confirm-payment-button" @click="confirmPayment" />
+        <pv-button label="Confirm Payment" class="confirm-payment-button" @click="confirmPayment"/>
       </div>
     </p-dialog>
     <p-dialog v-model:visible="showCommentDialog" :style="{ width: '400px' }" modal>
       <div class="dialog-content">
         <h3 class="dialog-header">Order Created!</h3>
         <p>Your order was accepted and it will arrive at the hour you have chosen!</p>
-        <p-button label="Go to My Orders" class="confirm-payment-button" @click="goToOrders" />
+        <pv-button label="Go to My Orders" class="confirm-payment-button" @click="goToOrders"/>
       </div>
     </p-dialog>
   </div>
