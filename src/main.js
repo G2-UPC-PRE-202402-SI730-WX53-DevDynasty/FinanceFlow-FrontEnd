@@ -1,6 +1,5 @@
 import './assets/main.css'
 
-import InputText from "primevue/inputtext";
 import FloatLabel from "primevue/floatlabel";
 
 import { createApp } from 'vue'

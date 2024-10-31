@@ -5,7 +5,7 @@ import ProfileComponent from "@/worker/profile/components/profile-component.vue"
 
 export default {
   name: 'App',
-  components: {SidenavBar, ProfileComponent}
+  components: {SidenavBar}
 }
 
 </script>
