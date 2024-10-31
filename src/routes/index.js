@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import RestaurantView from '@/worker/restaurant/components/restaurant-view.vue';
 import RestaurantDetailsView from '@/worker/restaurant/components/restaurant-details-view.vue';
 import RestaurantMenuView from "@/worker/restaurant/components/restaurant-menu-view.vue";
+import RestaurantOrderDetailsView from "@/restaurant/components/restaurant-order-details-view.vue";
 import roleSelectionComponent from "@/worker/team-activities/pages/role-selection.component.vue";
 import leaderComponent from "@/worker/team-activities/pages/leader.component.vue";
 import memberComponent from "@/worker/team-activities/pages/member.component.vue";
@@ -117,10 +118,16 @@ const router = createRouter({
             meta: {title: 'Restaurant Details'}
         },
         {
-            path: '/restaurant/:id/menu',
-            name: 'restaurant-menu',
+            path: '/restaurant/:name/menu',
+            name: 'restaurant-menu-view',
             component: RestaurantMenuView,
             meta: {title: 'Restaurant Menu'}
+        },
+        {
+            path: '/restaurants/:name/order-details',
+            name: 'restaurant-order-details',
+            component: RestaurantOrderDetailsView,
+            meta: {title: 'Restaurant Order Details'}
         },
         // Orders
         {path: '/my-order', name: 'my-order', component: MyOrderComponent, meta: {title: 'My Orders'}},

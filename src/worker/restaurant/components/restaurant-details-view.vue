@@ -23,7 +23,7 @@ export default {
       return '★'.repeat(rating) + '☆'.repeat(5 - rating)
     },
     goToMenu() {
-      this.$router.push(`/restaurant/${this.restaurant.id}/menu`)
+      this.$router.push({ name: 'restaurant-menu-view', params: { name: this.restaurant.name } });
     }
   }
 }
@@ -79,6 +79,7 @@ export default {
   margin-left: 240px;
   background-color: #ffe9e2;
   box-sizing: border-box;
+  min-width: 550px;
 }
 
 .restaurant-wrapper, .comments-wrapper {
@@ -96,6 +97,7 @@ export default {
   display: flex;
   align-items: center;
   gap: 20px;
+  text-align: center;
 }
 
 .card-image {
@@ -108,6 +110,7 @@ export default {
   width: 250px;
   height: 250px;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .card-info {
@@ -116,6 +119,12 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  align-items: center;
+}
+
+.comments-wrapper h3 {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .comments-section {
@@ -131,7 +140,7 @@ export default {
   display: flex;
   gap: 10px;
   align-items: center;
-  padding: 0 20px 0 20px;
+  padding: 0 20px;
 }
 
 .comment-text {
@@ -141,7 +150,7 @@ export default {
 }
 
 .stars {
-  color: #ffca28;
+  color: black;
   font-size: 1.2rem;
 }
 
@@ -152,6 +161,6 @@ export default {
   font-weight: bold;
   margin-top: 10px;
   border-radius: 5px;
-  padding: 5px 0 5px 0;
+  padding: 5px 0;
 }
 </style>

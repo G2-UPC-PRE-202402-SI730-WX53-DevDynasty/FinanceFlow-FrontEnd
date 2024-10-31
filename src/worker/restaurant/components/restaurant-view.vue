@@ -19,6 +19,31 @@ export default {
           image: 'src/assets/restaurant-2.jpg',
         },
       ],
+      selectedTypeOfFood: null,
+      selectedRating: null,
+      typeOfFoodOptions: [
+        {
+          name: 'Type of Food',
+          states: [
+            { cname: 'Asian', code: 'AS' },
+            { cname: 'Italian', code: 'IT' },
+            { cname: 'Mexican', code: 'MX' },
+            { cname: 'Vegetarian', code: 'VE' }
+          ]
+        }
+      ],
+      ratingOptions: [
+        {
+          name: 'Rating',
+          states: [
+            { cname: '5 Stars', code: 5 },
+            { cname: '4 Stars', code: 4 },
+            { cname: '3 Stars', code: 3 },
+            { cname: '2 Stars', code: 2 },
+            { cname: '1 Star', code: 1 }
+          ]
+        }
+      ]
     };
   },
   methods: {
@@ -26,7 +51,7 @@ export default {
       return '★'.repeat(rating) + '☆'.repeat(5 - rating);
     },
     goToDetails(name) {
-      this.$router.push({ name: 'RestaurantDetailsView', params: { name } })
+      this.$router.push({ name: 'RestaurantDetailsView', params: { name } });
     }
   }
 };
@@ -45,16 +70,39 @@ export default {
             <label for="restaurant-search" class="search-label">Search for a restaurant</label>
           </div>
           <div class="search-input-container">
-            <pv-input-text id="restaurant-search" class="search-input-text"/>
-            <pv-button class="p-button-outlined p-button-sm search-button" label="Search" />
+            <p-input-text id="restaurant-search" class="search-input-text" />
+            <p-button class="p-button-outlined p-button-sm search-button" label="Search" />
           </div>
         </div>
+
         <div class="filters">
+          <div class="filter-item">
+            <label for="type-of-food">Type of food</label>
+            <p-cascade-select
+                v-model="selectedTypeOfFood"
+                :options="typeOfFoodOptions"
+                optionLabel="cname"
+                optionGroupLabel="name"
+                :optionGroupChildren="['states']"
+                placeholder="Select Type"
+                class="cascade-select" />
+          </div>
+          <div class="filter-item">
+            <label for="rating">Rating</label>
+            <p-cascade-select
+                v-model="selectedRating"
+                :options="ratingOptions"
+                optionLabel="cname"
+                optionGroupLabel="name"
+                :optionGroupChildren="['states']"
+                placeholder="Select Rating"
+                class="cascade-select" />
+          </div>
         </div>
       </div>
 
       <div class="restaurant-list">
-        <pv-card v-for="restaurant in restaurants" :key="restaurant.name" class="restaurant-card">
+        <p-card v-for="restaurant in restaurants" :key="restaurant.name" class="restaurant-card">
           <template #content>
             <div class="card-content">
               <div class="card-image">
@@ -66,14 +114,14 @@ export default {
                 <p>Address: {{ restaurant.address }}</p>
                 <p>Schedule: {{ restaurant.schedule }}</p>
                 <p>Rating: <span class="stars">{{ renderStars(restaurant.rating) }}</span></p>
-                <pv-button
+                <p-button
                     label="Read more"
                     class="read-more-button"
-                    @click="goToDetails(restaurant.name)"/>
+                    @click="goToDetails(restaurant.name)" />
               </div>
             </div>
           </template>
-        </pv-card>
+        </p-card>
       </div>
     </div>
   </div>
@@ -85,6 +133,8 @@ export default {
   margin-left: 240px;
   background-color: #ffe9e2;
   box-sizing: border-box;
+  min-height: 100vh;
+  min-width: 550px;
 }
 
 .restaurant-wrapper {
@@ -115,16 +165,20 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .search-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 6px;
 }
 
 .search-label-container {
-  margin-bottom: 5px;
+  margin-bottom: -5px;
 }
 
 .search-input-container {
@@ -155,6 +209,7 @@ h1 {
   align-items: center;
   margin-bottom: 0;
   background-color: #ffcfbb;
+  padding: 0 20px 0 20px;
 }
 
 .restaurant-card {
@@ -194,7 +249,7 @@ h1 {
 }
 
 .stars {
-  color: #ffca28;
+  color: black;
   font-size: 1.2rem;
 }
 
@@ -206,5 +261,64 @@ h1 {
   margin-top: 10px;
   border-radius: 5px;
   padding: 5px 0 5px 0;
+}
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 150px;
+}
+
+.cascade-select {
+  width: 100%;
+  background-color: #fff;
+  padding: 8px;
+  font-size: 0.9rem;
+}
+
+.cascade-select .p-cascadeselect {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.cascade-select .p-cascadeselect .p-cascadeselect-trigger {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ff5a22; /* Color del ícono */
+}
+
+.cascade-select .p-cascadeselect-panel {
+  border-radius: 8px;
+  border: 1px solid #ff5a22;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cascade-select .p-cascadeselect-panel .p-cascadeselect-item {
+  padding: 8px;
+  font-size: 0.9rem;
+}
+
+.cascade-select .p-cascadeselect-panel .p-cascadeselect-item:hover {
+  background-color: #ffebd7;
+}
+
+.cascade-select .p-cascadeselect-label {
+  color: #333;
 }
 </style>
