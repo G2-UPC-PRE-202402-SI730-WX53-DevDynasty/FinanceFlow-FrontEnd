@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+
 import RestaurantView from '@/worker/restaurant/components/restaurant-view.vue';
 import RestaurantDetailsView from '@/worker/restaurant/components/restaurant-details-view.vue';
 import RestaurantMenuView from "@/worker/restaurant/components/restaurant-menu-view.vue";
@@ -7,7 +8,6 @@ import leaderComponent from "@/worker/team-activities/pages/leader.component.vue
 import memberComponent from "@/worker/team-activities/pages/member.component.vue";
 import homeComponent from "@/public/pages/home/components/home.component.vue";
 import profileComponent from "@/worker/profile/components/profile-component.vue";
-import MyOrderComponent from "@/worker/order/pages/my-order.component.vue";
 import NotificationsComponent from "@/public/components/notifications-component.vue";
 import loginComponent from "@/iam/pages/login.component.vue";
 import recoverPasswordComponent from "@/iam/components/recover-password.component.vue";
@@ -17,17 +17,16 @@ import SingUpWorkers from "@/iam/components/sign-up-workers.component.vue";
 import SignUpRestaurantComponent from "@/iam/components/sign-up-restaurant.component.vue";
 import planRestaurantComponent from "@/iam/components/plan-restaurant.component.vue";
 import PaymentComponent from "@/iam/components/payment.component.vue";
-import listMenus from "@/restaurant/menu/pages/menus.component.vue";
 import menusComponent from "@/restaurant/menu/pages/menus.component.vue";
 import menuDetailsComponent from "@/restaurant/menu/pages/menu-details.component.vue";
 import addMenuComponent from "@/restaurant/menu/components/add-menu.component.vue";
 import homeComponentRestaurant from "@/restaurant/home/pages/home.component.vue"
 import createTeamComponent from "@/worker/team-activities/components/create-team.component.vue";
 import joinATeamComponent from "@/worker/team-activities/components/join-a-team.component.vue";
-import {createRouter, createWebHistory} from "vue-router";
-import MyOrderComponent from "@/order/pages/my-order.component.vue";
-import OrderDetailsComponent from "@/order/pages/order-details.component.vue";
-import OrderTrackerComponent from "@/order/pages/order-tracker.component.vue";
+
+import MyOrderComponent from "@/worker/order/pages/my-order.component.vue";
+import OrderDetailsComponent from "@/worker/order/pages/order-details.component.vue";
+import OrderTrackerComponent from "@/worker/order/pages/order-tracker.component.vue";
 
 const router = createRouter({
     history: createWebHistory(),
