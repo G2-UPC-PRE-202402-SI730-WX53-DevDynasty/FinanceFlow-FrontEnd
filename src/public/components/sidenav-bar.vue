@@ -52,7 +52,7 @@ export default {
     <router-link to="/restaurants" class="sn-item">
       <font-awesome-icon :icon="faUtensils()" /> Restaurants
     </router-link>
-    <router-link to="/orders" class="sn-item">
+    <router-link to="/my-order" class="sn-item">
       <font-awesome-icon :icon="faReceipt()"/> My orders
     </router-link>
     <router-link to="/team-activities" class="sn-item">
@@ -66,7 +66,7 @@ export default {
     </router-link>
 
     <div class="logo">
-      <img src="@/assets/logo-gastrogo.png" alt="GastroGo Logo"/>
+      <img src="../../assets/logo-gastrogo.png" alt="GastroGo Logo"/>
     </div>
 
     <router-link to="/" class="sn-item logout">
@@ -77,8 +77,6 @@ export default {
 </template>
 
 <style scoped>
-
-
 
 .sidenav {
   width: 240px;
