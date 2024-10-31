@@ -1,124 +1,271 @@
-<script>
-export default {
-  name: "profile-component",
-  data() {
-    return {};
-  }
-}
-</script>
-
 <template>
   <div class="profile-container">
-    <div class="header-container">
-      <div class="header">
-        <h1>Profile</h1>
+    <div class="profile-header">
+      <h2>Profile</h2>
+    </div>
+
+    <div class="profile-form-container">
+      <div class="profile-form">
+        <div class="name-last-name">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" v-model="userData.name" />
+          </div>
+
+          <div class="space-name-lastname"></div>
+
+          <div class="form-group">
+            <label for="last-names">Last Names</label>
+            <input type="text" id="last-names" v-model="userData.lastNames" />
+          </div>
+        </div>
+
+        <div class="telefono-dni">
+          <div class="form-group">
+            <label for="phone">Telephone Number</label>
+            <input type="text" id="phone" v-model="userData.phone" />
+          </div>
+
+          <div class="space-name-lastname"></div>
+
+          <div class="form-group">
+            <label for="dni">DNI</label>
+            <input type="text" id="dni" v-model="userData.dni" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" id="address" v-model="userData.address" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" v-model="userData.email" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Change Password</label>
+          <input type="password" id="password" v-model="userData.password" placeholder="Enter your new password" />
+        </div>
+
+        <button class="save-button" @click="saveData">Save</button>
+      </div>
+
+      <div class="space-form-suscription"></div>
+
+      <div class="left-boxes">
+        <div class="subscription-box">
+          <div class="conteiner-subscription-title">
+            <h3>Your subscription</h3>
+          </div>
+          <div class="subscription-details">
+            <div class="subs-team-paid">
+              <p>Big Team</p>
+              <p>S/. 200 monthly</p>
+            </div>
+
+            <div class="payment-options">
+              <div class="option">
+                <input type="checkbox" id="monthly-payment" v-model="userData.monthlyPayment" />
+                <label for="monthly-payment">Automatic Monthly Payment</label>
+              </div>
+
+              <div class="option">
+                <input type="checkbox" id="annual-payment" v-model="userData.annualPayment" />
+                <label for="annual-payment">Automatic Annual Payment</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subscription-box">
+          <div class="conteiner-subscription-title">
+            <h3>Payment method</h3>
+          </div>
+          <div class="subscription-details">
+            <div class="info-payment">
+              <p>Credit/Debit Card</p>
+              <p>XXXX-XXXX-XXXX-6789</p>
+              <p>Expiration Date</p>
+              <p>07/30</p>
+            </div>
+            <button @click="addPaymentMethod">Add Method</button>
+          </div>
+        </div>
       </div>
     </div>
-      <div class="profile-list">
-        <div style="columns: 2">
-          <article>
-            <label for="firstname">Name</label>
-            <input id="firstname" placeholder="Enter your name">
-            <label for="phone">Telephone Number</label>
-            <input id="phone" placeholder="Enter your phone number">
-          </article>
-          <article>
-            <label for="lastname">Lastname</label>
-            <input id="lastname" placeholder="Enter your lastname">
-            <label for="dni">DNI</label>
-            <input id="dni" placeholder="Enter your DNI">
-         </article>
-        </div>
-        <div style="">
-          <label for="address">Address</label>
-          <input id="address" placeholder="Enter your address">
-          <label for="email">Email</label>
-          <input id="email" placeholder="Enter your email">
-          <label for="cpassword">Change Password</label>
-          <input id="cpassword" placeholder="Enter your new password">
-          <pv-button>Save</pv-button>
-        </div>
-        <div class="suscription">
-          <div class="suscription-card">
-            <pv-card>
-              <div class="card-content">
-                <div class="info-container">
-                  <h2>La Mar</h2>
-                  <p><strong>Address:</strong> <a href="#">Santiago de Surco</a></p>
-                  <p><strong>Schedule:</strong> 12:00 - 18:00</p>
-                </div>
-              </div>
-            </pv-card>
-          </div>
-      </div>
-      </div>
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      userData: {
+        name: "Lucas",
+        lastNames: "Fernandez",
+        phone: "999888777",
+        dni: "45789642",
+        address: "Santiago de Surco, El Derby, 408",
+        email: "lucasf@gmail.com",
+        password: "",
+        monthlyPayment: true,
+        annualPayment: false,
+      },
+    };
+  },
+  methods: {
+    saveData() {
+      console.log("Data saved:", this.userData);
+    },
+    addPaymentMethod() {
+      console.log("Adding a new payment method.");
+    },
+  },
+};
+</script>
+
 <style scoped>
 .profile-container {
-  background-color: #fbeae5;
+  display: flex;
+  flex-basis: content;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10%;
+  width: 100%;
+  height: 100%;
+}
+
+.profile-header {
+  background-color: #FF7338;
+  display: flex;
+  justify-content: center;
   padding: 20px;
 }
 
-.header-container {
-  background-color: #FF7F50;
-  padding: 20px;
-  margin-bottom: 0px;
-  max-width: 850px;
-  margin-left: 300px;
+.profile-header h2 {
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+  align-items: center;
 }
 
-.header {
+.profile-form-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: #FFCFBB;
+  padding: 30px;
+}
+
+.name-last-name{
+  display: flex;
+  flex-direction: row;
+}
+
+.telefono-dni{
+  display: flex;
+  flex-direction: row;
+}
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.save-button {
+  background-color: #FF7338;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.save-button:hover {
+  background-color: #ff9f33;
+}
+
+.space-form-suscription{
+  padding: 30px;
+}
+.space-name-lastname{
+  padding: 10px;
+}
+.subscription-box {
+  margin-bottom: 20px;
+}
+
+.subscription-box h3 {
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.conteiner-subscription-title{
+  background-color: #FF7338;
+  color: white;
+  padding: 5px;
+}
+
+.subs-team-paid {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  color: white;
 }
 
-
-.profile-list {
-  background-color: #FFCFBB;
+.subscription-details {
+  font-size: 12px;
+  background-color: #faeae7;
+  margin-top: 0px;
   padding: 20px;
-  max-width: 850px;
-  margin-left: 300px;
-  min-height: 700px;
+}
+.subscription-details button {
+  background-color: #FF7338;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+}
+.subscription-details button:hover {
+  background-color: #c65829;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
 }
 
-.profile-list input{
-  width: 100%;
-  padding: 10px;
+.payment-options {
+  margin-top: 20px;
+}
+
+.payment-options .option {
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
-  margin-top: 15px;
-  border-radius: 5px;
-  border-color: #FFFFFF;
-  border-style: solid;
 }
 
-.profile-list label{
-  color: #000;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-button{
-  background-color: #FF7F50;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  border-color: #FF7F50;
-  border-style: solid;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  width: 100%;
-}
-
-button:hover{
-  background-color: #b45431;
-  border-color: #b45431;
-  color: white;
-}
-
-</style>
+.payment-options label {
+  margin-left: 10px;
+}</style>
