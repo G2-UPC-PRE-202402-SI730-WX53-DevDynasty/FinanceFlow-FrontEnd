@@ -78,8 +78,6 @@ export default {
 
 <style scoped>
 
-
-
 .sidenav {
   width: 240px;
   background: #1C8DA6;

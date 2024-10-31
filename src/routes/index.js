@@ -22,6 +22,8 @@ import menusComponent from "@/restaurant/menu/pages/menus.component.vue";
 import menuDetailsComponent from "@/restaurant/menu/pages/menu-details.component.vue";
 import addMenuComponent from "@/restaurant/menu/components/add-menu.component.vue";
 import homeComponentRestaurant from "@/restaurant/home/pages/home.component.vue"
+import createTeamComponent from "@/worker/team-activities/components/create-team.component.vue";
+import joinATeamComponent from "@/worker/team-activities/components/join-a-team.component.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -124,25 +126,12 @@ const router = createRouter({
             component: MyOrderComponent,
             meta: {title: 'Orders'}
         },
-        // Team Activities
-        {
-            path: '/team-activities',
-            name:'team-activities',
-            component: roleSelectionComponent,
-            meta: {title: 'Team Activities'}
-        },
-        {
-            path: '/team-activities/leader',
-            name:'team-activities-leader',
-            component: leaderComponent,
-            meta: {title: 'Leader'}
-        },
-        {
-            path: '/team-activities/members',
-            name:'team-activities-members',
-            component: memberComponent,
-            meta: {title: 'Members'}
-        },
+        //Team Activities
+        { path: '/team-activities', name:'team-activities', component: roleSelectionComponent, meta: {title: 'Team Activities'}},
+        { path: '/team-activities/create-team', name: 'team-activities-create-team', component: createTeamComponent, meta: { title: 'Create Team' }},
+        { path: '/team-activities/join-a-team', name: 'team-activities-join-a-team', component: joinATeamComponent, meta: { title: 'Join a Team' }},
+        { path: '/team-activities/leader', name:'team-activities-leader', component: leaderComponent, meta: {title: 'Leader'}},
+        { path: '/team-activities/members', name:'team-activities-members', component: memberComponent, meta: {title: 'Members'}},
         // Profile
         {
             path: '/profile',
@@ -157,9 +146,7 @@ const router = createRouter({
             component: NotificationsComponent,
             meta: {title: 'Notifications'}
         },
-
         // restaurant
-
         // Menus
         {
             path: '/menus',

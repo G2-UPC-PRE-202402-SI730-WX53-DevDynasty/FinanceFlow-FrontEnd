@@ -6,10 +6,28 @@ import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 
 export default {
   name: 'members',
+
+  data() {
+    return {
+      teamCode: '',
+      votingCode: '',
+    }
+  },
+
   methods: {
     faCheck() {
       return faCheck
-    }
+    },
+
+    joinTeam() {
+      console.log('Joining team');
+      localStorage.setItem('teamCode', this.teamCode);
+    },
+
+    joinVoting() {
+      console.log('Joining voting');
+      localStorage.setItem('votingCode', this.votingCode);
+    },
   },
   components: {FontAwesomeIcon}
 }
@@ -17,12 +35,11 @@ export default {
 </script>
 
 <template>
-  <div class="leader-container">
-
-    <div class="leader-content">
-      <div class="leader-header">
-        Team Leader
-      </div>
+  <div class="member-container">
+    <div class="member-header">
+      Team Member
+    </div>
+    <div class="member-content">
       <div class="card-container">
         <Card>
           <div class="card-header">
@@ -41,6 +58,7 @@ export default {
           <div class="card join-team">
             <p>Enter code to join: </p>
             <input type="text" class="input-field" placeholder="Enter code here" />
+            <Button @click="joinTeam" class="join-button">Join Team</Button>
           </div>
         </Card>
 
@@ -66,6 +84,7 @@ export default {
           <div class="card join-voting">
             <p>Enter code to join voting:</p>
             <input type="text" class="input-field" placeholder="Enter code here" />
+            <Button @click="joinVoting" class="join-button">Join Voting</Button>
           </div>
         </Card>
 
@@ -78,12 +97,12 @@ export default {
             <div class="vote-options">
               <div class="vote-item">
                 <p><strong>Ochi</strong></p>
-                <pv-button class="vote-button"><font-awesome-icon :icon="faCheck()"></font-awesome-icon></pv-button>
+                <Button class="vote-button"><font-awesome-icon :icon="faCheck()"></font-awesome-icon></Button>
                 <p class="results">24</p>
               </div>
               <div class="vote-item">
                 <p><strong>Palm & Vine</strong></p>
-                <pv-button class="vote-button"><font-awesome-icon :icon="faCheck()"></font-awesome-icon></pv-button>
+                <Button class="vote-button"><font-awesome-icon :icon="faCheck()"></font-awesome-icon></Button>
                 <p class="results">1</p>
               </div>
             </div>
@@ -107,21 +126,6 @@ export default {
           </div>
         </Card>
 
-        <Card>
-          <div class="card-header">
-            Order Payment
-          </div>
-
-          <div class="card order-payment">
-            <p><strong>Legends</strong> - 25 workers</p>
-            <p>Oshi - Order #00000001 - Total: S/. 400.50</p>
-            <p>Each member pays: S/. 16.02</p>
-            <p>Each member pays for tip: S/. 7.00</p>
-            <pv-button class="pay-button">Pay</pv-button>
-          </div>
-        </Card>
-
-
       </div>
     </div>
 
@@ -130,24 +134,24 @@ export default {
 
 <style scoped>
 
-.leader-container {
+.member-container {
   padding: 20px;
   margin-left: 80px;
-  min-height: 0;
-  flex: 1;
-  display: flex;
   height: 100%;
   width: 100%;
   justify-content: center;
   align-items: center;
+  min-height: 0;
+  flex: 1;
+  display: grid;
 }
 
 
-.leader-header {
+.member-header {
   background-color: #FF7338;
   padding: 20px;
   border-radius: 8px 8px 0 0;
-  max-width: 800px;
+  max-width: 880px;
   text-align: center;
   max-height: 76.5px;
   font-size: 24px;
@@ -155,7 +159,7 @@ export default {
   font-weight: bold;
 }
 
-.leader-content {
+.member-content {
   background-color: #FFCFBB;
   padding: 20px;
   border-radius: 0 0 8px 8px;
@@ -219,13 +223,14 @@ export default {
   margin-top: 5px;
 }
 
-.pay-button {
+.join-button {
   background-color: #FF7338;
   color: white;
   border: none;
   padding: 10px;
   width: 150px;
   height: 30px;
+  margin-top: 10px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -246,4 +251,3 @@ select {
 
 
 </style>
-

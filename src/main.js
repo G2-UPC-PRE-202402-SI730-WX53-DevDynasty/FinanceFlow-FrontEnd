@@ -1,5 +1,8 @@
 import './assets/main.css'
 
+import InputText from "primevue/inputtext";
+import FloatLabel from "primevue/floatlabel";
+
 import { createApp } from 'vue'
 import App from './App.vue'
 import {PrimeVue} from "@primevue/core";
@@ -18,8 +21,9 @@ app.use(PrimeVue, {ripple: true});
 app.component('pv-input-text', InputText);
 app.component('pv-dropdown', Dropdown);
 app.component('pv-button', Button);
-app.component('pv-card', Card);
 app.component('pv-avatar', Avatar);
+app.component('pv-card', Card);
+app.component('FloatLabel', FloatLabel);
 
 app.use(i18n);
 

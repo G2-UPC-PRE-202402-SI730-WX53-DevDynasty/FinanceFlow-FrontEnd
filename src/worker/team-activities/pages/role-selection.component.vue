@@ -1,29 +1,40 @@
 <script>
 
 export default {
-  name: 'role-selection'
+  name: 'role-selection',
+
+  methods: {
+    goToLeader() {
+      this.$router.push('/team-activities/create-team');
+    },
+
+    goToMember() {
+      this.$router.push('/team-activities/join-a-team');
+    }
+  }
 }
 
 </script>
 
 <template>
   <div class="roles">
-  <div class="role-header">
-  What is your role?
-  </div>
-  <div class="role-selection">
-    <div class="role-buttons">
-      <pv-button class="role-button">
-        <router-link to="/team-activities/leader">Team Leader</router-link>
-      </pv-button>
-      <p class="description">*You will be the one making the order for your team!</p>
-
-    <pv-button class="role-button">
-      <router-link to="/team-activities/members">Team Member</router-link>
-    </pv-button>
-    <p class="description">*You will join the team of your leader and vote for the restaurant you want!</p>
+    <div class="role-header">
+      What is your role?
     </div>
-  </div>
+    <div class="role-selection">
+      <p>Remember that each member (including the leader) have to add a method of payment since it will be automatically done after confirming an order.</p>
+      <div class="role-buttons">
+        <button @click="goToLeader" class="role-button">
+          Team Leader
+        </button>
+        <p class="description">*You will be the one making the order for your team!</p>
+
+        <button @click="goToMember" class="role-button">
+          Team Member
+        </button>
+        <p class="description">*You will join the team of your leader and vote for the restaurant you want!</p>
+      </div>
+    </div>
   </div>
 </template>
 
