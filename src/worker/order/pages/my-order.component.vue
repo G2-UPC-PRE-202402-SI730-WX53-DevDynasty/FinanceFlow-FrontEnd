@@ -6,11 +6,16 @@ export default {
   name: "my-order",
   data() {
     return {
-      orders: []
+      orders: [
+        {id: 1, name: 'Order #0001', restaurant: 'Ochi', status: 'In progress', date: '10/10/2024'},
+        {id: 2, name: 'Order #0002', restaurant: 'La Mar', status: 'In progress', date: '12/10/2024'}
+      ]
     };
   },
   methods: {
-
+    goDetails(orderId) {
+      this.$router.push({ name: 'order-details', params: { orderId } });
+    }
   }
 };
 </script>
@@ -19,61 +24,46 @@ export default {
   <div class="order-container">
     <div class="header-container">
       <div class="header">
-        <h1>MyOrders</h1>
+        <h1>Orders</h1>
       </div>
     </div>
 
     <div class="order-list">
-      <div class="order-card">
+      <div class="order-card" v-for="order in orders" :key="order.id">
         <Card>
           <div class="card-content">
             <div class="icon-container">
               <i class="pi pi-file-check" style="font-size: 7.5rem; color: black;"></i>
             </div>
             <div class="info-container">
-              <h2>Order #0001</h2>
-              <p><strong>Restaurant:</strong> <a href="#"> Ochi</a></p>
-              <p><strong>Status:</strong>In progress</p>
-              <p><strong>Date:</strong> 10/10/2024</p>
-              <button label="see details" class="see-details-button">See Details</button>
+              <h2> {{order.name}}</h2>
+              <p><strong>Restaurant:</strong> <a href="#"> {{order.restaurant}}</a></p>
+              <p><strong>Status:</strong> {{order.status}}</p>
+              <p><strong>Date:</strong> {{order.date}}</p>
+              <button label="see details" class="see-details-button" @click="goDetails(order.id)">See Details</button>
             </div>
           </div>
         </Card>
       </div>
 
-      <div class="order-card">
-        <Card>
-          <div class="card-content">
-            <div class="icon-container">
-              <i class="pi pi-file-check" style="font-size: 7.5rem; color: black;"></i>
-            </div>
-            <div class="info-container">
-              <h2>Order #0002</h2>
-              <p><strong>Restaurant:</strong> <a href="#"> La Mar</a></p>
-              <p><strong>Status:</strong>In progress</p>
-              <p><strong>Date:</strong> 12/10/2024</p>
-              <button label="see details" class="see-details-button">See Details</button>
-            </div>
-          </div>
-        </Card>
-      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
 .order-container {
-  background-color: #fbeae5;
+  background-color:#FAEAE7;
   padding: 20px;
+
 }
 
 .header-container {
   background-color: #FF7338;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 0;
   margin-bottom: 0px;
   max-width: 750px;
-  margin-left: 400px;
+  margin-left: 580px;
 }
 
 .header {
@@ -86,9 +76,9 @@ export default {
 .order-list {
   background-color: #FFCFBB;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 0;
   max-width: 750px;
-  margin-left: 400px;
+  margin-left: 580px;
   min-height: 700px;
 }
 
@@ -103,7 +93,8 @@ export default {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   min-height: 250px;
-  min-width: 650px;
+  max-width: 629px;
+  margin-left: 5px;
 }
 
 .icon-container {
@@ -124,7 +115,7 @@ export default {
 
 .info-container h2 {
   margin-bottom: 5px;
-  text-align: left;
+  text-align: center;
   width: 100%;
   color: black;
 }
@@ -139,6 +130,8 @@ export default {
   cursor: pointer;
   margin-top: 10px;
   font-weight: bold;
+  min-width: 250px;
+  min-height: 35px;
 }
 
 .see-details-button:hover {

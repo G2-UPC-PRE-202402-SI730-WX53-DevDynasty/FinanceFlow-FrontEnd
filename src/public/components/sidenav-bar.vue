@@ -52,7 +52,7 @@ export default {
     <router-link to="/restaurants" class="sn-item">
       <font-awesome-icon :icon="faUtensils()" /> Restaurants
     </router-link>
-    <router-link to="/orders" class="sn-item">
+    <router-link to="/my-order" class="sn-item">
       <font-awesome-icon :icon="faReceipt()"/> My orders
     </router-link>
     <router-link to="/team-activities" class="sn-item">

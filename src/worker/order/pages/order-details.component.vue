@@ -13,23 +13,23 @@ export default {
         orderNumber: "#0001",
         status: "In progress",
         appetizers: [
-          { name: "Edamame", quantity: 20 },
-          { name: "Gyozas", quantity: 5 },
+          {name: "Edamame", quantity: 20},
+          {name: "Gyozas", quantity: 5},
         ],
         mainDishes: [
-          { name: "Sushi Nigiri", quantity: 21 },
-          { name: "Ramen de Cerdo", quantity: 4 },
+          {name: "Sushi Nigiri", quantity: 21},
+          {name: "Ramen de Cerdo", quantity: 4},
         ],
         drinks: [
-          { name: "Sake", quantity: 5 },
-          { name: "Té verde", quantity: 20 },
+          {name: "Sake", quantity: 5},
+          {name: "TÃ© verde", quantity: 20},
         ],
       },
     };
   },
   methods: {
     goToOrder() {
-      this.$router.push({ name: "my-order" });
+      this.$router.push({name: "my-order"});
     },
     cancelOrder() {
       this.showConfirmation = true;
@@ -59,13 +59,15 @@ export default {
             <div class="info-container">
               <div class="column">
                 <p><strong>Restaurant:</strong> <a href="#"> {{ order.restaurant }}</a></p>
-                <p><strong>Date:</strong> {{order.date}}</p>
-                <p><strong>Delivery Time:</strong> {{order.deliveryTime}} </p>
+                <p><strong>Date:</strong> {{ order.date }}</p>
+                <p><strong>Delivery Time:</strong> {{ order.deliveryTime }} </p>
               </div>
               <div class="column">
-                <p><strong>Order {{order.orderNumber}}</strong></p>
-                <p><strong>Status:</strong> {{order.status}}</p>
-                <p><router-link to="/order-tracker">Check the tracker</router-link></p>
+                <p><strong>Order {{ order.orderNumber }}</strong></p>
+                <p><strong>Status:</strong> {{ order.status }}</p>
+                <p>
+                  <router-link to="/order-tracker">Check the tracker</router-link>
+                </p>
               </div>
             </div>
           </div>
@@ -77,20 +79,20 @@ export default {
                 <h2>Appetizers</h2>
                 <div class="menu-items">
                   <div class="menu-item" v-for="item in order.appetizers" :key="item.name">
-                    <p><strong> {{item.name}}:</strong> {{item.quantity}}</p>
+                    <p><strong> {{ item.name }}:</strong> {{ item.quantity }}</p>
                   </div>
                 </div>
                 <h2>Main Dishes</h2>
                 <div class="menu-items">
                   <div class="menu-item" v-for="item in order.mainDishes" :key="item.name">
-                    <p><strong>{{item.name}}:</strong> {{item.quantity}}</p>
+                    <p><strong>{{ item.name }}:</strong> {{ item.quantity }}</p>
                   </div>
 
                 </div>
                 <h2>Drinks</h2>
                 <div class="menu-items">
                   <div class="menu-item" v-for="item in order.drinks" :key="item.name">
-                    <p><strong> {{item.name}}:</strong> {{item.quantity}}</p>
+                    <p><strong> {{ item.name }}:</strong> {{ item.quantity }}</p>
                   </div>
                 </div>
               </div>
@@ -109,7 +111,8 @@ export default {
     <div v-if="showConfirmation" class="confirmation-message">
       <div class="confirmation-content">
         <h3>Are you sure you want to cancel the order?</h3>
-        <p class="confirmation-text">Your order will be cancelled and we will notify the restaurant. There is no turning back.</p>
+        <p class="confirmation-text">Your order will be cancelled and we will notify the restaurant. There is no turning
+          back.</p>
         <button @click="closeConfirmation" class="accept-button">Cancel</button>
         <button @click="confirmCancellation" class="accept-button">Accept</button>
       </div>
@@ -125,7 +128,6 @@ export default {
     </div>
 
 
-
   </div>
 </template>
 
@@ -134,16 +136,19 @@ export default {
   background-color: #fbeae5;
   padding: 20px;
 }
+
 .header {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
+
 .small-text {
   font-size: 1rem;
   color: black;
   margin-top: 3px;
 }
+
 .order-details-list {
   background-color: #FFCFBB;
   padding: 20px;
@@ -153,6 +158,7 @@ export default {
   min-height: 877px;
   margin-top: 80px;
 }
+
 .card-content {
   display: flex;
   flex-direction: column;
@@ -164,27 +170,33 @@ export default {
   max-width: 650px;
   min-height: 150px;
 }
+
 .order-card, .menu-card {
   margin: 20px 0;
 }
+
 .info-container {
   display: flex;
   justify-content: space-between;
 }
+
 .column {
   flex: 1;
   padding: 10px;
   margin-left: 30px;
 }
+
 .menu-item-container {
   margin-left: 40px;
 }
+
 .menu-items {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 10px;
 }
+
 .menu-item {
   display: flex;
   align-items: center;
@@ -192,6 +204,7 @@ export default {
   flex: 1;
   margin-right: 20px;
 }
+
 .menu-item p {
   margin-right: 10px;
 }
@@ -234,6 +247,7 @@ export default {
   min-width: 590px;
   min-height: 187px;
 }
+
 .accept-button {
   background-color: white;
   color: black;
