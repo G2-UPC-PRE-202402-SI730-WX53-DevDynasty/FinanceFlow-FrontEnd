@@ -24,6 +24,10 @@ import addMenuComponent from "@/restaurant/menu/components/add-menu.component.vu
 import homeComponentRestaurant from "@/restaurant/home/pages/home.component.vue"
 import createTeamComponent from "@/worker/team-activities/components/create-team.component.vue";
 import joinATeamComponent from "@/worker/team-activities/components/join-a-team.component.vue";
+import {createRouter, createWebHistory} from "vue-router";
+import MyOrderComponent from "@/order/pages/my-order.component.vue";
+import OrderDetailsComponent from "@/order/pages/order-details.component.vue";
+import OrderTrackerComponent from "@/order/pages/order-tracker.component.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -120,12 +124,9 @@ const router = createRouter({
             meta: {title: 'Restaurant Menu'}
         },
         // Orders
-        {
-            path: '/orders',
-            name: 'orders',
-            component: MyOrderComponent,
-            meta: {title: 'Orders'}
-        },
+        {path: '/my-order', name: 'my-order', component: MyOrderComponent, meta: {title: 'My Orders'}},
+        {path: '/order-details/:orderId', name: 'order-details', component: OrderDetailsComponent, meta: {title: 'Order Details'}},
+        {path: '/order-tracker', name: 'order-tracker', component: OrderTrackerComponent, meta: {title: 'Order Tracker'}},
         //Team Activities
         { path: '/team-activities', name:'team-activities', component: roleSelectionComponent, meta: {title: 'Team Activities'}},
         { path: '/team-activities/create-team', name: 'team-activities-create-team', component: createTeamComponent, meta: { title: 'Create Team' }},
