@@ -66,7 +66,7 @@ export default {
     </router-link>
 
     <div class="logo">
-      <img src="@/assets/logo-gastrogo.png" alt="GastroGo Logo"/>
+      <img src="../../assets/logo-gastrogo.png" alt="GastroGo Logo"/>
     </div>
 
     <router-link to="/" class="sn-item logout">
