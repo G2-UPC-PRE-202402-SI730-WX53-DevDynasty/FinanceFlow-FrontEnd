@@ -1,14 +1,22 @@
 <script>
-
-
+import home from "@/public/pages/home/components/home.component.vue";
+import SidenavBar from "@/public/components/sidenav-bar.vue";
 export default {
-  name: 'App',
+  name: "home-view-workers",
+  components: {
+    SidenavBar,
+    home
+  },
 }
-
 </script>
 
 <template>
-      <router-view></router-view>
+  <div id="app">
+    <sidenav-bar></sidenav-bar>
+    <div class="screen-content">
+      <home></home>
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -30,5 +38,4 @@ export default {
   align-items: center;
   align-content: center;
 }
-
 </style>

@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'RestaurantMenuView',
+  name: 'RestaurantMenu',
   data() {
     return {
       restaurant: {

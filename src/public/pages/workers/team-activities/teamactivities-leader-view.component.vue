@@ -1,14 +1,22 @@
 <script>
 
+import SidenavBar from "@/public/components/sidenav-bar.vue";
+import Leader from "@/worker/team-activities/pages/leader.component.vue";
 
 export default {
-  name: 'App',
+  name: "teamactivities-leader-view" ,
+  components: {Leader, SidenavBar}
 }
-
 </script>
 
+
 <template>
-      <router-view></router-view>
+  <div id="app">
+    <sidenav-bar></sidenav-bar>
+    <div class="screen-content">
+      <leader></leader>
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -30,5 +38,4 @@ export default {
   align-items: center;
   align-content: center;
 }
-
 </style>

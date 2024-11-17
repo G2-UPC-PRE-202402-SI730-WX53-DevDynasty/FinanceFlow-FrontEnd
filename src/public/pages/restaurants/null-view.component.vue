@@ -1,14 +1,21 @@
 <script>
 
+import SidenavBarRestaurant from "@/restaurant/public/components/sidenav-bar-restaurant.vue";
 
 export default {
-  name: 'App',
+  name: "notication-view.component" ,
+  components: {SidenavBarRestaurant}
 }
-
 </script>
 
+
 <template>
-      <router-view></router-view>
+  <div id="app">
+    <sidenav-bar-restaurant></sidenav-bar-restaurant>
+    <div class="screen-content">
+      :c
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -30,5 +37,4 @@ export default {
   align-items: center;
   align-content: center;
 }
-
 </style>

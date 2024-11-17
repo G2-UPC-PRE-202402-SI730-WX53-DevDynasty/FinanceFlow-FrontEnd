@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'RestaurantView',
+  name: 'Restaurant-component',
   data() {
     return {
       restaurants: [
