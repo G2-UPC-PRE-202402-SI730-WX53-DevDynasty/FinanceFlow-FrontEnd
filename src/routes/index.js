@@ -30,6 +30,8 @@ import addmenuViewComponent from "@/public/pages/restaurants/menu/addmenu-view.c
 import noticationViewComponent from "@/public/pages/workers/notication-view.component.vue";
 import noticationRestaurantViewComponent from "@/public/pages/restaurants/notication-restaurant-view.component.vue";
 import nullViewComponent from "@/public/pages/restaurants/null-view.component.vue";
+import PaymentRestaurantComponent from "@/iam/components/payment-restaurant.component.vue";
+import planWorkersComponent from "@/iam/components/plan-workers.component.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -89,15 +91,21 @@ const router = createRouter({
         {
             path: '/plan-workers',
             name: 'plan-workers',
-            component: planRestaurantComponent,
+            component: planWorkersComponent,
             meta: {title: 'Plan Workers'}
         },
         // Payment
         {
-            path: '/payment',
-            name: 'payment',
+            path: '/payment/workers',
+            name: 'payment-workers',
             component: PaymentComponent,
-            meta: {title: 'Payment'}
+            meta: {title: 'Payment workers'}
+        },
+        {
+            path: '/payment/restaurant',
+            name: 'payment-restaurant',
+            component: PaymentRestaurantComponent,
+            meta: {title: 'Payment restaurant'}
         },
         // Home
         {

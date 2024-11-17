@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     goToPayment() {
-      this.$router.push({ name: 'payment' });
+      this.$router.push({ name: 'payment-restaurant' });
     }
   }
 }
