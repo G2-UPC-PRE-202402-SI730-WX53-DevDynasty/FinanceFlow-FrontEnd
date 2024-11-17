@@ -3,7 +3,7 @@ import RecentOrdersComponent from "@/restaurant/home/components/recent-orders.co
 import ReputationComponent from "@/restaurant/home/components/reputation.component.vue";
 
 export default {
-  name: 'home-component',
+  name: 'home-restaurant',
   components: {
     RecentOrdersComponent,
     ReputationComponent

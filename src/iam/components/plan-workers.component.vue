@@ -10,7 +10,7 @@ export default {
       this.$router.push({ name: 'home' });
     },
     goToPayment() {
-      this.$router.push({ name: 'payment' });
+      this.$router.push({ name: 'payment-workers' });
     }
   }
 }

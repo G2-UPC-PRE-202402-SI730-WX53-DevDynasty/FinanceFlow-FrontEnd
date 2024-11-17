@@ -29,7 +29,7 @@ export default {
     },
     faHome() {
       return faHome
-    }
+    },
   },
   components: {FontAwesomeIcon},
   data() {
@@ -41,19 +41,19 @@ export default {
 
 <template>
   <div class="sidenav">
-    <router-link to="/" class="sn-item">
+    <router-link to="/home/restaurant" class="sn-item">
       <font-awesome-icon :icon="faHome()" /> Home
     </router-link>
-    <router-link to="/my-orders" class="sn-item">
+    <router-link to="/myorders/restaurant" class="sn-item">
       <font-awesome-icon :icon="faReceipt()"/> My orders
     </router-link>
     <router-link to="/menus" class="sn-item">
-      <font-awesome-icon :icon="faClipboardList()"/> Team activities
+      <font-awesome-icon :icon="faClipboardList()"/> Menus
     </router-link>
-    <router-link to="/profile" class="sn-item">
+    <router-link to="/profile/restaurant" class="sn-item">
       <font-awesome-icon :icon="faUser()"/> Profile
     </router-link>
-    <router-link to="/notifications" class="sn-item">
+    <router-link to="/notifications/restaurant" class="sn-item">
       <font-awesome-icon :icon="faBell()"/> Notifications
     </router-link>
 
@@ -61,7 +61,7 @@ export default {
       <img src="../../../assets/logo-gastrogo.png" alt="GastroGo Logo"/>
     </div>
 
-    <router-link to="/" class="sn-item logout">
+    <router-link to="/login" class="sn-item logout">
       <font-awesome-icon :icon="faSignOut()"/> Logout
     </router-link>
   </div>

@@ -68,7 +68,7 @@ export default {
 
       <div class="subscription-section">
         <div class="photo-section">
-          <img src="../assets/profile-restaurant.jpeg" alt="Restaurant Photo" class="restaurant-photo" />
+          <img src="" alt="Restaurant Photo" class="restaurant-photo" />
           <button class="upload-button">Upload photo</button>
           <button class="delete-button">Delete photo</button>
         </div>

@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'OrderDetailsView',
+  name: 'restaurantOrderDetails',
   data() {
     return {
       showPaymentDialog: false,
