@@ -1,6 +1,16 @@
-# GastroGo-FrontEnd
+# GastroGo Web Application
 
 This template should help get you started developing with Vue 3 in Vite.
+
+## Summary
+GastroGo Application uses Vue Framework and Prime Vue for the components. It also uses axios for the HTTP requests.
+
+## Technologies
+- Vue Framework
+- REST client with Axios
+- PrimeVue UI
+- Vue Router
+
 
 ## Recommended IDE Setup
 
