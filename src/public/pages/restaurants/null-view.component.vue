@@ -1,10 +1,11 @@
 <script>
 
 import SidenavBarRestaurant from "@/restaurant/public/components/sidenav-bar-restaurant.vue";
+import MyOrderRestaurant from "@/restaurant/restaurant-order/components/my-order-restaurant.component.vue";
 
 export default {
   name: "notication-view.component" ,
-  components: {SidenavBarRestaurant}
+  components: {MyOrderRestaurant, SidenavBarRestaurant}
 }
 </script>
 
@@ -13,7 +14,7 @@ export default {
   <div id="app">
     <sidenav-bar-restaurant></sidenav-bar-restaurant>
     <div class="screen-content">
-      :c
+      <my-order-restaurant></my-order-restaurant>
     </div>
   </div>
 </template>

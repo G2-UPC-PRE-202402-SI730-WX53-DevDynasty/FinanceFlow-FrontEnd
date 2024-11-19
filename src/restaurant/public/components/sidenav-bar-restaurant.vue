@@ -61,7 +61,7 @@ export default {
       <img src="../../../assets/logo-gastrogo.png" alt="GastroGo Logo"/>
     </div>
 
-    <router-link to="/login" class="sn-item logout">
+    <router-link to="/" class="sn-item logout">
       <font-awesome-icon :icon="faSignOut()"/> Logout
     </router-link>
   </div>
